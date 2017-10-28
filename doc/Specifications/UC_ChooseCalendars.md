@@ -11,9 +11,7 @@ Revision History
 | 28/10/2017 | 1.0         | Creation of Document | Denny Flämig; Florian Christof |
 |            |             |                      |                                |
 |            |             |                      |                                |
-|            |             |                      |                                |
 
-Table of Contents
 
   
 Use-Case Specification: Choose calendars
