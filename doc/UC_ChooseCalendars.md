@@ -20,15 +20,15 @@ Use-Case Specification: Choose calendars
 
 1.  Use-Case Name
 
-    1.  Brief Description
+    1.1  Brief Description
 
->   To be determined.
+To be determined.
 
-1.  Flow of Events
+2.  Flow of Events
 
-    1.  Basic Flow
+    2.1  Basic Flow
 
->   *Activity Diagram(UML):*
+*Activity Diagram(UML):*
 
 *Mock-Up:*
 
@@ -36,24 +36,22 @@ Use-Case Specification: Choose calendars
 
 >   To be determined.
 
-1.  Special Requirements
+3.  Special Requirements
 
-    1.  Functionality on Android
+    3.1  Functionality on Android
 
->   Since this will be a game in form of an Android Application it is important
->   for every design such as this to be fitting for Smartphone screens.
+Since this will be a game in form of an Android Application it is important
+for every design such as this to be fitting for Smartphone screens.
 
-1.  Preconditions
+4.  Preconditions
 
-    1.  \<Precondition 1\>
-
+    4.1  \<Precondition 1\>
 ...
 
-1.  Postconditions
+5.  Postconditions
 
-    1.  \<Postcondition 1\>
+    5.1  \<Postcondition 1\>
+    ...
 
->   …
-
-Extension Points
-================
+6.  Extension Points
+...
