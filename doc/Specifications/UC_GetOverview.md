@@ -37,8 +37,7 @@ To be determined.
 *Mock-Up:*
 
 *Feature file:*
-
->   To be determined.
+To be determined.
 
 3 Special Requirements
 ======================
