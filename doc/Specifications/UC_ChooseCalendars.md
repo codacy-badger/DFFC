@@ -36,6 +36,10 @@ To be determined.
 
 *Mock-Up:*
 
+![alt text][logo]
+
+[logo]: https://github.com/flowriance/DFFC/blob/master/doc/Mockup_ChooseCalendar.png "Overall use case diagram"
+
 *Feature file:*
 
 To be determined.
