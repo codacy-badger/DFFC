@@ -1,8 +1,11 @@
->   **WakeMeInTime**
+**WakeMeInTime**
+----------------
 
 Software Requirements Specification
+===================================
 
->   **Version 1.0**
+**Version 1.0**
+---------------
 
 Revision History
 ================
@@ -54,6 +57,10 @@ according to your customized time.
 
 The following Use Case Diagram will show you the main features of our
 application:
+
+![alt text][logo]
+
+[logo]: https://github.com/flowriance/DFFC/blob/master/doc/WakeMeInTime.png "Overall use case diagram"
 
 3 Specific Requirements
 =======================
