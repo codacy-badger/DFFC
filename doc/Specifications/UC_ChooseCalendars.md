@@ -1,10 +1,14 @@
 **WakeMeInTime**
+----------------
 
 **Use-Case Specification: Choose calendars**
+============================================
 
 **Version 1.0**
+---------------
 
-**Revision History**
+Revision History
+================
 
 | **Date**   | **Version** | **Description**      | **Author**                     |
 |------------|-------------|----------------------|--------------------------------|
@@ -12,7 +16,7 @@
 |            |             |                      |                                |
 |            |             |                      |                                |
 
-Use-Case Specification: Choose calendars
+**Use-Case Specification: Choose calendars**
 
 1 Use-Case Name
 ===============
