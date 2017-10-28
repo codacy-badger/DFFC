@@ -35,6 +35,10 @@ To be determined.
 *Activity Diagram(UML):*
 
 *Mock-Up:*
+![alt text][logo]
+
+[logo]: https://github.com/flowriance/DFFC/blob/master/doc/Mockup_GetOverview.png "Mockup: Get overview"
+
 
 *Feature file:*
 To be determined.
