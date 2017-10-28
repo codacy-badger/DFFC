@@ -38,7 +38,7 @@ To be determined.
 
 ![alt text][logo]
 
-[logo]: https://github.com/flowriance/DFFC/blob/master/doc/Mockup_ChooseCalendar.png "Overall use case diagram"
+[logo]: https://github.com/flowriance/DFFC/blob/master/doc/Mockup_ChooseCalendar.png "Mockup: Choose calendar"
 
 *Feature file:*
 
