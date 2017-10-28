@@ -10,9 +10,9 @@ Software Requirements Specification
 Revision History
 ================
 
-| **Date** |   |   | **Version** | **Description**                         | **Author**                     |
-|----------|---|---|-------------|-----------------------------------------|--------------------------------|
-| 22/10/17 |   |   | 1.0         | Initial version, added Use Case Diagram | Florian Christof; Denny Flämig |
+| **Date** | **Version** | **Description**                         | **Author**                     |
+|----------|-------------|-----------------------------------------|--------------------------------|
+| 22/10/17 | 1.0         | Initial version, added Use Case Diagram | Florian Christof; Denny Flämig |
 
 1 Introduction
 ==============
