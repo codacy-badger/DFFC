@@ -105,7 +105,7 @@ time you have left.
 
 The user can change various app setting.
 
-### 3.1.9 [Change calendars](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_ChangeCalendars.md)
+### 3.1.9 [Change calendars](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_ChooseCalendars.md)
 
 The user can select which calendars he wants to use for setting his alarm.
 
