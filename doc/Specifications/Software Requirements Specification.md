@@ -111,7 +111,7 @@ The user can select which calendars he wants to use for setting his alarm.
 
 ### 3.1.10 [Get overview](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_GetOverview.md)
 
-The user get an overview about his alarms, his meetings and his personalized live traffic data.
+The user gets an overview about his alarms, his meetings and his personalized live traffic data.
 
 3.2 Usability
 -------------
