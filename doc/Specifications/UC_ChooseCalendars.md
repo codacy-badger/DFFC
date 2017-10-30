@@ -34,7 +34,7 @@ To be determined.
 
 *Activity Diagram(UML):*
 
-![alt text](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/ChoosecalendarUCD.png "Use Case Diagram: Choose calendar")
+![alt text](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/ChooseCalendarUCD.png "Use Case Diagram: Choose calendar")
 
 *Mock-Up:*
 
