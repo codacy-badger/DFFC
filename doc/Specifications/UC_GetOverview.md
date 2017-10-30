@@ -34,6 +34,8 @@ To be determined.
 
 *Activity Diagram(UML):*
 
+![alt text](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/GetOverviewUCD.png "UCD: Get overview")
+
 *Mock-Up:*
 ![alt text][logo]
 
@@ -63,12 +65,12 @@ every design such as this to be fitting for Smartphone screens.
 5 Postconditions
 ================
 
-5.1 \<Postcondition 1\> 
+5.1 \<Postcondition 1\>
 ------------------------
 
 …
 
-6 Extension Points 
+6 Extension Points
 ===================
 
 ...
