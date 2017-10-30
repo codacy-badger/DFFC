@@ -52,7 +52,7 @@ To be determined.
 3.1 Functionality on Android
 ----------------------------
 
-Since this will be a game in form of an Android Application it is important for
+Since this will be an Android Application it is important for
 every design such as this to be fitting for Smartphone screens.
 
 4 Preconditions
