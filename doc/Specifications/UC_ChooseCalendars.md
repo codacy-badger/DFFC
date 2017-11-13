@@ -48,30 +48,15 @@ To be determined.
 
 ```
 
-Feature: Login
+Feature: Choose calendar
   As a mobile app user
-  in order to use the application the user needs to log in
+  in order to organize the appointments user has to choose a calendar
 
-  Scenario: valid login
-    Given user is on login activity
-    When user provides username "User"
-    And user provides password "1234"
-    And user presses the login button
-    Then user should be successfully logged in as "User"
+  Scenario: successful choice
+    Given user is on choose calendar activity
+    When user selects calendar
+    Then calendar should be added to synchronized calendars
 
-  Scenario Outline: invalid login
-    Given User is on login activity
-    When User provides username <username>
-    And User provides password <password>
-    And user presses the login button
-    Then User should not be logged in
-    And User should be shown an error message
-
-    Examples:
-
-      | username | password |
-      | tester   | test     |
-      | Admin    | wrong    |
 
 ```
 
