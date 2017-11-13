@@ -46,7 +46,7 @@ To be determined.
 
 **choosseCalendar.feature**
 
-```
+```gherkin
 
 Feature: Choose calendar
   As a mobile app user
