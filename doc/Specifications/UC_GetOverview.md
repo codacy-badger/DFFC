@@ -13,7 +13,7 @@ Revision History
 | **Date**   | **Version** | **Description**      | **Author**                     |
 |------------|-------------|----------------------|--------------------------------|
 | 28/10/2017 | 1.0         | Creation of Document | Denny Flämig; Florian Christof |
-|            |             |                      |                                |
+| 13/11/2017 | 1.1         | Adding feature files | Denny Flämig; Florian Christof |
 |            |             |                      |                                |
 
 **Use-Case Specification: Get overview**
