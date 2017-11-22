@@ -74,9 +74,9 @@ Revision History
 
 ### DB Schema
 
-![alt text][logo]
+![alt text][logo1]
 
-[logo]: https://github.com/flowriance/DFFC/blob/master/doc/Datatabase%20Diagram.png? "Database diagram"
+[logo1]: https://github.com/flowriance/DFFC/blob/master/doc/Datatabase%20Diagram.png "Database diagram"
 
 
 # 10. Size and Performance
