@@ -7,4 +7,4 @@ Projectteam for Software Engeneering at DHBW Karlsruhe, Germany.
 <p>will be a automated alarm clock for your android device. <br />
 It analyses your calendar entries and sets your alarm according to your preferences.</p>
 
-Our blog can be found on https://dffcblog.files.wordpress.com/
+Our blog can be found on https://dffcblog.wordpress.com/
