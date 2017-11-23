@@ -49,6 +49,12 @@ Revision History
 5.1 Overview
 -------------
 
+### UML diagram
+![alt text][logo]
+
+[logo]: https://github.com/flowriance/DFFC/blob/master/doc/ClassDiagram.png "Class diagram"
+
+
 5.2  Architecturally Significant Design Packages
 ------------------------------------------------
 
@@ -61,11 +67,6 @@ Revision History
 
 8.1 Overview
 -----------
-
-### UML diagram
-![alt text][logo]
-
-[logo]: https://github.com/flowriance/DFFC/blob/master/doc/ClassDiagram.png "Class diagram"
 
 8.2 Layers
 -----------
