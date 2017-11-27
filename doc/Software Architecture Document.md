@@ -43,7 +43,10 @@ This document provides a comprehensive architectural overview of the system, usi
 
 ## MVC:
 
-<<insert picture>>
+![alt text][mvc]
+
+[mvc]: https://github.com/flowriance/DFFC/blob/master/doc/MVC_MVP.png "MVC scheme"
+
 
 # 3. Architectural Goals and Constraints
 
