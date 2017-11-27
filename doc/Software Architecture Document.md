@@ -28,6 +28,11 @@ This document provides a comprehensive architectural overview of the system, usi
 1.3 Definitions, Acronyms and Abbreviations
 -----------
 
+| **Name**     | **Description**           |
+|--------------|---------------------------|
+| MVC          | Model-View-Controller     |
+| UML          | Unified Modeling Language |
+
 1.4 References
 -----------
 
@@ -36,9 +41,13 @@ This document provides a comprehensive architectural overview of the system, usi
 
 # 2. Architectural Representation
 
+## MVC:
+
+<<insert picture>>
 
 # 3. Architectural Goals and Constraints
 
+inherent in Android
 
 # 4. Use-Case View
 
@@ -58,6 +67,7 @@ This document provides a comprehensive architectural overview of the system, usi
 5.2  Architecturally Significant Design Packages
 ------------------------------------------------
 
+(tbd)
 
 # 6. Process View
 
@@ -73,7 +83,7 @@ This document provides a comprehensive architectural overview of the system, usi
 
 # 9. Data View (optional)
 
-### DB Schema
+### Database Schema
 
 ![alt text][logo1]
 
