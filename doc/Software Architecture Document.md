@@ -20,6 +20,8 @@ Revision History
 1.1 Purpose
 -----------
 
+This document provides a comprehensive architectural overview of the system, using a number of different architectural views to depict different aspects of the system. It is intended to capture and convey the significant architectural decisions which have been made on the system.
+
 1.2 Scope
 -----------
 
@@ -40,9 +42,7 @@ Revision History
 
 # 4. Use-Case View
 
-
-4.1 Use-Case Realizations
--------------------------
+(n/a)
 
 # 5. Logical View
 
@@ -61,15 +61,15 @@ Revision History
 
 # 6. Process View
 
+(n/a)
+
 # 7. Deployment View
+
+(n/a)
 
 # 8. Implementation View
 
-8.1 Overview
------------
-
-8.2 Layers
------------
+(n/a)
 
 # 9. Data View (optional)
 
@@ -82,6 +82,8 @@ Revision History
 
 # 10. Size and Performance
 
+(n/a)
 
 # 11. Quality
 
+(n/a)
