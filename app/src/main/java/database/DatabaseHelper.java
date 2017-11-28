@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Created by Florian Christof on 28.11.2017.
@@ -230,6 +233,37 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } finally {
             db.endTransaction();
         }
+    }
+
+    public List<Calendar> getAllCalendar() {
+        List<Calendar> calendars = new ArrayList<>();
+
+        // SELECT * FROM CalendarS
+        // LEFT OUTER JOIN USERS
+        // ON CalendarS.KEY_Calendar_USER_ID_FK = USERS.KEY_USER_ID
+        String CALENDAR_SELECT_QUERY =
+                String.format("SELECT * FROM %s ",
+                        TABLE_CALENDAR);
+
+        // "getReadableDatabase()" and "getWriteableDatabase()" return the same object (except under low
+        // disk space scenarios)
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(CALENDAR_SELECT_QUERY, null);
+        try {
+            if (cursor.moveToFirst()) {
+                do {
+                    Calendar newCalendar = new Calendar(cursor.getString(cursor.getColumnIndex(KEY_CALENDAR_NAME)), cursor.getString(cursor.getColumnIndex(KEY_CALENDAR_DESCRIPTION)));
+                    calendars.add(newCalendar);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            Log.d(TAG, "Error while trying to get Calendars from database");
+        } finally {
+            if (cursor != null && !cursor.isClosed()) {
+                cursor.close();
+            }
+        }
+        return calendars;
     }
 }
 
