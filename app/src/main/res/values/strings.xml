@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WakeMeInTime</string>
+    <string name="myCalendars">Meine Kalendar</string>
+    <string name="calendarName"></string>
 </resources>

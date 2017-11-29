@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.test.rule.ActivityTestRule;
 
-import com.wakemeintime.dffc.wakemeintime.ChooseCalendarActivity;
+import com.wakemeintime.dffc.wakemeintime.activities.ChooseCalendarActivity;
 
 import org.junit.Rule;
 

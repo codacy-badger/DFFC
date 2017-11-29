@@ -121,7 +121,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 KEY_CALENDARENTRY_DESCRIPTION + " TEXT," +
                 KEY_CALENDARENTRY_TIME + " INTEGER," +
                 KEY_CALENDARENTRY_PLACE + " TEXT," +
-                KEY_CALENDARENTRY_CALENDAR_ID_FK + " INTEGER REFERENCES" +
+                KEY_CALENDARENTRY_CALENDAR_ID_FK + " INTEGER REFERENCES " + TABLE_CALENDAR +
                 ")";
         String CREATE_WEATHERDATA_TABLE = "CREATE TABLE " + TABLE_WEATHERDATA +
                 "(" +
@@ -136,7 +136,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 KEY_TRAFFICDATA_TRAVELTIME + " INTEGER," +
                 KEY_TRAFFICDATA_TRAFFIC_DENSITY + " TEXT" +
                 ")";
-        String CREATE_TRAINDATA_TABLE = "CREATE TABLE " + TABLE_TRAFFICDATA +
+        String CREATE_TRAINDATA_TABLE = "CREATE TABLE " + TABLE_TRAINDATA +
                 "(" +
                 KEY_TRAINDATA_ID + " INTEGER PRIMARY KEY," +
                 KEY_TRAINDATA_TRAVELTIME + " INTEGER," +
@@ -252,7 +252,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         try {
             if (cursor.moveToFirst()) {
                 do {
-                    Calendar newCalendar = new Calendar(cursor.getString(cursor.getColumnIndex(KEY_CALENDAR_NAME)), cursor.getString(cursor.getColumnIndex(KEY_CALENDAR_DESCRIPTION)));
+                    Calendar newCalendar = new Calendar(cursor.getString(cursor.getColumnIndex(KEY_CALENDAR_NAME)), cursor.getString(cursor.getColumnIndex(KEY_CALENDAR_DESCRIPTION)), cursor.getString(cursor.getColumnIndex(KEY_CALENDAR_IS_ACTIVE)));
                     calendars.add(newCalendar);
                 } while (cursor.moveToNext());
             }
