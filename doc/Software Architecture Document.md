@@ -57,9 +57,9 @@ inherent in Android
 4.1 Overall use case diagram
 -----------------------------
 
-![alt text][screenshot_useCalendar]
+![alt text][ucd]
 
-[screenshot_useCalendar]: https://github.com/flowriance/DFFC/blob/master/doc/Screenshot_chooseCalendar.png "use case diagram"
+[ucd]: https://github.com/flowriance/DFFC/blob/master/doc/WakeMeInTime.png "use case diagram"
 
 # 5. Logical View
 
@@ -83,7 +83,9 @@ inherent in Android
 
 # 7. Deployment View
 
-(n/a)
+![alt text][screenshot_useCalendar]
+
+[screenshot_useCalendar]: https://github.com/flowriance/DFFC/blob/master/doc/Screenshot_chooseCalendar.jpg "use case diagram"
 
 # 8. Implementation View
 
