@@ -10,11 +10,12 @@ android {
 
     defaultConfig {
         applicationId "com.wakemeintime.dffc.wakemeintime"
-        minSdkVersion 21
-        targetSdkVersion 26
+        minSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testApplicationId "com.wakemeintime.dffc.wakemeintime.test"
+        testInstrumentationRunner "com.wakemeintime.dffc.wakemeintime.test.Instrumentation"
     }
     buildTypes {
         release {
@@ -22,17 +23,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        androidTest {
+            assets.srcDirs = ['src/androidTest/assets']
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:27.0.1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-
-    compile 'io.cucumber:cucumber-java8:2.1.0'
-    compile 'io.cucumber:cucumber-junit:2.1.0'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestCompile 'com.android.support:support-annotations:27.0.1'  // <-- match with the support lib version
+    androidTestCompile 'info.cukes:cucumber-android:1.2.5@jar'
+    androidTestCompile 'info.cukes:cucumber-picocontainer:1.2.4'
 }
