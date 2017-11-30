@@ -54,7 +54,12 @@ inherent in Android
 
 # 4. Use-Case View
 
-(n/a)
+4.1 Overall use case diagram
+-----------------------------
+
+![alt text][screenshot_useCalendar]
+
+[screenshot_useCalendar]: https://github.com/flowriance/DFFC/blob/master/doc/Screenshot_chooseCalendar.png "use case diagram"
 
 # 5. Logical View
 
