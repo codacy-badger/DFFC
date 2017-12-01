@@ -13,8 +13,8 @@
     <RingtonePreference
         android:defaultValue="content://settings/system/notification_sound"
         android:dependency="notifications_new_message"
-        android:key="notifications_new_message_ringtone"
-        android:ringtoneType="notification"
+        android:key="alarm_ringtone"
+        android:ringtoneType="alarm"
         android:title="@string/pref_title_ringtone" />
 
     <!-- NOTE: This preference will be enabled only when the checkbox above is checked. -->
@@ -23,5 +23,24 @@
         android:dependency="notifications_new_message"
         android:key="notifications_new_message_vibrate"
         android:title="@string/pref_title_vibrate" />
+
+    <EditTextPreference
+        android:defaultValue="@string/alarm_repeat_time_value"
+        android:dependency="notifications_new_message"
+        android:inputType="time"
+        android:key="alarm_repeat_time"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/title_Alarm_repeat_time" />
+
+
+    <EditTextPreference
+        android:defaultValue="@string/alarm_repeat_amount_value"
+        android:dependency="notifications_new_message"
+        android:key="alarm_repeat_amount"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/title_Alarm_repeat_amount" />
 
 </PreferenceScreen>
