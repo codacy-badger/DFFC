@@ -106,7 +106,9 @@ class SettingsActivity : AppCompatPreferenceActivity() {
             // to their values. When their values change, their summaries are
             // updated to reflect the new value, per the Android Design
             // guidelines.
-            bindPreferenceSummaryToValue(findPreference("notifications_new_message_ringtone"))
+            bindPreferenceSummaryToValue(findPreference("alarm_ringtone"))
+            bindPreferenceSummaryToValue(findPreference("alarm_repeat_time"))
+            bindPreferenceSummaryToValue(findPreference("alarm_repeat_amount"))
         }
 
         override fun onOptionsItemSelected(item: MenuItem): Boolean {
