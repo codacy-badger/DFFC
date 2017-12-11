@@ -16,7 +16,7 @@ Revision History
 |            |             |                      |                                |
 |            |             |                      |                                |
 
-**Use-Case Specification: Choose calendars**
+**Use-Case Specification: Change morning routine settings**
 
 1 Use-Case Name
 ===============
@@ -34,28 +34,21 @@ To be determined.
 
 *Activity Diagram(UML):*
 
-![alt text](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/ChooseCalendarUCD.png "Use Case Diagram: Choose calendar")
+![alt text](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/ChooseCalendarUCD.png "Use Case Diagram: Change morning routine settings")
 
 *Mock-Up:*
 
 ![alt text][logo]
 
-[logo]: https://github.com/flowriance/DFFC/blob/master/doc/Mockup_ChooseCalendar.png "Mockup: Choose calendar"
+[logo]: https://github.com/flowriance/DFFC/blob/master/doc/Mockup_ChangeMorningRoutineSettings.png "Mockup: Change morning routine settings"
 
 *Feature file:*
 
-**choosseCalendar.feature**
+**changemorningroutinesettings.feature**
 
 ```gherkin
 
-Feature: Choose calendar
-  As a mobile app user
-  in order to organize the appointments user has to choose a calendar
 
-  Scenario: successful choice
-    Given user is on choose calendar activity
-    When user selects calendar
-    Then calendar should be added to synchronized calendars
 
 
 ```
