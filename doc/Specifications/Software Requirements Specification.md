@@ -101,17 +101,25 @@ The app has access to the alarm and can set it and change the alarm settings.
 The app will show you various notifications about your appointments, or how much
 time you have left.
 
-### 3.1.8 Change settings
-
-The user can change various app setting.
-
-### 3.1.9 [Choose calendars](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_ChooseCalendars.md)
+### 3.1.8 [Choose calendars](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_ChooseCalendars.md)
 
 The user can select which calendars he wants to use for setting his alarm.
 
-### 3.1.10 [Get overview](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_GetOverview.md)
+### 3.1.9 [Get overview](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_GetOverview.md)
 
 The user gets an overview about his alarms, his meetings and his personalized live traffic data.
+
+### 3.1.8 [Change alarm settings](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_ChangeAlarmSettings.md)
+
+The user can change alarm setting.
+
+### 3.1.8 [Change morning routine settings](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_ChangeMorningRoutineSettings.md)
+
+The user can change various morning routine setting.
+
+### 3.1.8 [Change transportation settings](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_ChangeTransportationSettings.md)
+
+The user can change various transportation setting.
 
 3.2 Usability
 -------------
