@@ -18,10 +18,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.GetOverviewActivity" />
         <activity android:name=".activities.ChooseCalendarActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".GetOverviewActivity" />
-        <activity android:name=".SettingsActivity" />
         <!-- <activity
              android:name=".SettingsActivity"
              android:label="@string/title_activity_settings"></activity>-->

@@ -20,11 +20,18 @@ Revision History
 1.1 Purpose
 -----------
 
+This document provides a comprehensive architectural overview of the system, using a number of different architectural views to depict different aspects of the system. It is intended to capture and convey the significant architectural decisions which have been made on the system.
+
 1.2 Scope
 -----------
 
 1.3 Definitions, Acronyms and Abbreviations
 -----------
+
+| **Name**     | **Description**           |
+|--------------|---------------------------|
+| MVC          | Model-View-Controller     |
+| UML          | Unified Modeling Language |
 
 1.4 References
 -----------
@@ -34,15 +41,25 @@ Revision History
 
 # 2. Architectural Representation
 
+## MVC:
+
+![alt text][mvc]
+
+[mvc]: https://github.com/flowriance/DFFC/blob/master/doc/MVC_MVP.png "MVC scheme"
+
 
 # 3. Architectural Goals and Constraints
 
+inherent in Android
 
 # 4. Use-Case View
 
+4.1 Overall use case diagram
+-----------------------------
 
-4.1 Use-Case Realizations
--------------------------
+![alt text][ucd]
+
+[ucd]: https://github.com/flowriance/DFFC/blob/master/doc/WakeMeInTime.png "use case diagram"
 
 # 5. Logical View
 
@@ -58,22 +75,25 @@ Revision History
 5.2  Architecturally Significant Design Packages
 ------------------------------------------------
 
+(tbd)
 
 # 6. Process View
 
+(n/a)
+
 # 7. Deployment View
+
+![alt text][screenshot_useCalendar]
+
+[screenshot_useCalendar]: https://github.com/flowriance/DFFC/blob/master/doc/Screenshot_chooseCalendar.jpg "use case diagram"
 
 # 8. Implementation View
 
-8.1 Overview
------------
-
-8.2 Layers
------------
+(n/a)
 
 # 9. Data View (optional)
 
-### DB Schema
+### Database Schema
 
 ![alt text][logo1]
 
@@ -82,6 +102,8 @@ Revision History
 
 # 10. Size and Performance
 
+(n/a)
 
 # 11. Quality
 
+(n/a)
