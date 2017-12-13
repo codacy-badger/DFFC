@@ -3,7 +3,7 @@
     <string name="myCalendars">Meine Kalendar</string>
     <string name="calendarName"></string>
     <string name="title_activity_settings">Settings</string>
-    <string name="title_activity_main">Main(WMIT)</string>
+    <string name="title_activity_main">WakeMeInTime</string>
 
     <!-- Strings related to Settings -->
 
