@@ -41,6 +41,8 @@ This document provides a comprehensive architectural overview of the system, usi
 
 # 2. Architectural Representation
 
+Our target plattfmorm is android so we use the standard pattern for android app development.
+
 ## MVC:
 
 ![alt text][mvc]
