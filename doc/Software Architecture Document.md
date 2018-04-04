@@ -87,7 +87,7 @@ inherent in Android
 
 ![alt text][screenshot_useCalendar]
 
-[screenshot_useCalendar]: https://github.com/flowriance/DFFC/blob/master/doc/Deployment_View.png "use case diagram"
+[screenshot_useCalendar]: https://github.com/flowriance/DFFC/blob/master/doc/Screenshot_chooseCalendar.jpg "use case diagram"
 
 # 8. Implementation View
 
