@@ -33,11 +33,12 @@ platforms, specifically the Android system.
 1.3 Definitions, Acronyms, and Abbreviations
 --------------------------------------------
 
-| Acronyms | Description                       |
-|----------|-----------------------------------|
-| MVC      | Model-View-Controller             |
-| App      | Application                       |
-| API      | Application-Programming-Interface |
+| Acronyms | Description                        |
+|----------|------------------------------------|
+| MVC      | Model-View-Controller              |
+| App      | Application                        |
+| API      | Application-Programming-Interface  |
+| IDE      | Integrated Development Environment |
 
 1.4 References
 --------------
@@ -187,11 +188,23 @@ The programming of this application will follow the MVC architecture pattern. It
 decouples the major components model, view and controller. The model contains
 the business logic, the view shows the result to the user and the controller is
 the intermediary between those two. This allows for efficient code reuse and
-parallel development.
+parallel development. 
 
 ### 3.5.2 Programming language
 
 This application will be programmed in Kotlin and Java.
+
+### 3.5.3 Version Control
+
+Our project is hosted on GitHub, so we do Version Control with git.
+
+### 3.5.4 IDE
+
+Our IDE is Android Studio. Our project is supported since version 3.0 because it's the first version supporting Kotlin. We use it with a Youtrack Plugin and a Cucumber Plugin for Testing.
+
+### 3.5.5 Project management
+
+For project management we use Youtrack. For the best experience it's connected with GitHub and Android Studio.
 
 3.7 On-line User Documentation and Help System Requirements
 -----------------------------------------------------------
