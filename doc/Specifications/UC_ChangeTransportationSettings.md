@@ -42,7 +42,8 @@ To be determined.
 
 [logo]: https://github.com/flowriance/DFFC/blob/master/doc/Mockup_ChangeTransportationSettings.png "Mockup: Change transportation settings"
 
-*Feature file:*
+
+[*Feature file:*](https://github.com/flowriance/DFFC/blob/master/app/src/androidTest/assets/features/changeTransportationSettings.feature)
 
 **changetransportationsettings.feature**
 
