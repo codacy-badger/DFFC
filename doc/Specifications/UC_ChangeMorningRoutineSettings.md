@@ -42,7 +42,8 @@ To be determined.
 
 [logo]: https://github.com/flowriance/DFFC/blob/master/doc/Mockup_ChangeMorningRoutineSettings.png "Mockup: Change morning routine settings"
 
-*Feature file:*
+
+[*Feature file:*](https://github.com/flowriance/DFFC/blob/master/app/src/androidTest/assets/features/changeMorningRoutineSettings.feature)
 
 **changemorningroutinesettings.feature**
 
