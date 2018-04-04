@@ -42,7 +42,7 @@ To be determined.
 
 [logo]: https://github.com/flowriance/DFFC/blob/master/doc/Mockup_ChangeAlarmSettings.png "Mockup: Change alarm settings"
 
-*Feature file:*
+[*Feature file:*](https://github.com/flowriance/DFFC/blob/master/app/src/androidTest/assets/features/changeAlarmSettings.feature)
 
 **changealarmsettings.feature**
 
