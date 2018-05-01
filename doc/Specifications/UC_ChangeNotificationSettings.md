@@ -37,9 +37,7 @@ To be determined.
 
 *Mock-Up:*
 
-![alt text][logo]
-
-[logo]: https://github.com/flowriance/DFFC/blob/master/doc/Mockup_ChangeNotificationSettings.png "Mockup: Change notification settings"
+<img src="https://github.com/flowriance/DFFC/blob/master/doc/Mockup_ChangeNotificationSettings.png" data-canonical-src="https://github.com/flowriance/DFFC/blob/master/doc/Mockup_ChangeNotificationSettings.png" width="400" />
 
 
 3 Special Requirements
