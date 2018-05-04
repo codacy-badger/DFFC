@@ -1,4 +1,4 @@
-package database;
+package com.wakemeintime.dffc.wakemeintime.database;
 
 import android.content.ContentValues;
 import android.content.Context;

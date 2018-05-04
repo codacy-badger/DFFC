@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
-import com.wakemeintime.dffc.wakemeintime.SettingsActivity;
+import com.wakemeintime.dffc.wakemeintime.activities.SettingsActivity;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -88,7 +88,7 @@ public class changeMorningRoutineSettings {
 
     @When("^user changes the wake up time$")
     public void userChangesTheWakeUpTime() {
-        /**ViewInteraction appCompatButton = onView(
+        /*ViewInteraction appCompatButton = onView(
          allOf(withId(com.wakemeintime.dffc.wakemeintime.R.id.Settings), withText("Settings"),
          childAtPosition(
          childAtPosition(
@@ -110,7 +110,7 @@ public class changeMorningRoutineSettings {
 
     @Then("^the wake up time should be changed and displayed$")
     public void theWakeUpTimeShouldBeChangedAndDisplayed() {
-        /**ViewInteraction textView = onView(
+        /*ViewInteraction textView = onView(
          allOf(withId(android.R.id.summary), withText("15 minutes"),
          childAtPosition(
          childAtPosition(
@@ -156,7 +156,7 @@ public class changeMorningRoutineSettings {
 
     @Then("^the information shown on wake should be changed and displayed$")
     public void theInformationShownOnWakeShouldBeChangedAndDisplayed() {
-        /**ViewInteraction textView2 = onView(
+        /*ViewInteraction textView2 = onView(
          allOf(withId(android.R.id.summary), withText("Have a great day!"),
          childAtPosition(
          childAtPosition(

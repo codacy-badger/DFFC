@@ -1,12 +1,11 @@
-package com.wakemeintime.dffc.wakemeintime
+package com.wakemeintime.dffc.wakemeintime.activities
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.wakemeintime.dffc.wakemeintime.activities.ChooseCalendarActivity
+import com.wakemeintime.dffc.wakemeintime.R
 import kotlinx.android.synthetic.main.activity_main.*
-
 
 
 class MainActivity : AppCompatActivity() {

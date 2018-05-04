@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "967198940817",
+    "firebase_url": "https://dffc-81bf0.firebaseio.com",
+    "project_id": "dffc-81bf0",
+    "storage_bucket": "dffc-81bf0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:967198940817:android:89cfcd6e015b24a3",
+        "android_client_info": {
+          "package_name": "com.wakemeintime.dffc.wakemeintime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "967198940817-43earv89brpuv7u11v2co1dsv0h9fo40.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wakemeintime.dffc.wakemeintime",
+            "certificate_hash": "e55d81788a35278562d9aecf7ac757260e441196"
+          }
+        },
+        {
+          "client_id": "967198940817-b2ikla1n69opr4gk7hjqv2df93sn3l0d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAysNnVb6T2HM91ZyaIzy3QB4uGg7ToUFY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "967198940817-b2ikla1n69opr4gk7hjqv2df93sn3l0d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

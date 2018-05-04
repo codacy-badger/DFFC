@@ -1,4 +1,4 @@
-package com.wakemeintime.dffc.wakemeintime
+package com.wakemeintime.dffc.wakemeintime.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -14,6 +14,7 @@ import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.common.api.ResultCallback
 import com.google.android.gms.common.api.Status
+import com.wakemeintime.dffc.wakemeintime.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -71,7 +72,7 @@ class LoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLis
     private fun updateUI2(isLogin: Boolean) {
         if (isLogin) {
             val account: GoogleSignInAccount? = GoogleSignIn.getLastSignedInAccount(this)
-            mStatusTextView?.setText(getString(R.string.signed_in_fmt, account?.displayName))
+            mStatusTextView?.text = getString(R.string.signed_in_fmt, account?.displayName)
 
             sign_in_button.visibility = View.GONE
             sign_out_and_disconnect.visibility = View.VISIBLE

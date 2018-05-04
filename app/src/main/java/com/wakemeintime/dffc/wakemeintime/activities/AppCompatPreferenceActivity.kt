@@ -1,4 +1,4 @@
-package com.wakemeintime.dffc.wakemeintime
+package com.wakemeintime.dffc.wakemeintime.activities
 
 import android.content.res.Configuration
 import android.os.Bundle

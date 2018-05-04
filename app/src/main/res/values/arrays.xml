@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_notification_amount_values">
+        <item>Easy</item>
+        <item>Normal</item>
+        <item>Hard</item>
+    </string-array>
+    <string-array name="pref_notification_amount">
+        <item>1h before event</item>
+        <item>12h before event </item>
+        <item>12h before + Daily Updates</item>
+
+    </string-array>
+
+</resources>
