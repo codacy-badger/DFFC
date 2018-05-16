@@ -335,41 +335,38 @@ each application.
 <thead>
 <tr class="header">
 <th>Technique Objective:</th>
-<th>[Exercise target-of-test functionality, including navigation, data entry, processing, and retrieval to observe and log target behavior.]</th>
+<th>Exercise target-of-test functionality, including navigation, data entry, processing, and retrieval to observe and log target behavior.</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Technique:</td>
-<td><p>[Execute each use-case scenario’s individual use-case flows or functions and features, using valid and invalid data, to verify that:</p>
+<td><p>Execute each use-case scenario’s individual use-case flows or functions and features, using valid and invalid data, to verify that:</p>
 <p>• the expected results occur when valid data is used</p>
 <p>• the appropriate error or warning messages are displayed when invalid data is used</p>
-<p>• each business rule is properly applied]</p></td>
+<p>• each business rule is properly applied</p></td>
 </tr>
 <tr class="even">
 <td>Oracles:</td>
-<td>[Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.]</td>
+<td>Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.</td>
 </tr>
 <tr class="odd">
 <td>Required Tools:</td>
-<td><p>[The technique requires the following tools:</p>
+<td><p>The technique requires the following tools:</p>
 <ul>
 <li><p>Test Script Automation Tool</p></li>
-<li><p>base configuration imager and restorer</p></li>
-<li><p>backup and recovery tools</p></li>
-<li><p>installation-monitoring tools (registry, hard disk, CPU, memory, and so forth)</p></li>
-<li><p>Data-generation tools]</p></li>
+<li><p>Data-generation tools</p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>Success Criteria:</td>
-<td><p>[The technique supports the testing of:</p>
+<td><p>The technique supports the testing of:</p>
 <p>• all key use-case scenarios</p>
-<p>• all key features]</p></td>
+<p>• all key features</p></td>
 </tr>
 <tr class="odd">
 <td>Special Considerations:</td>
-<td>[Identify or describe those items or issues (internal or external) that impact the implementation and execution of function test.]</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
@@ -377,11 +374,11 @@ each application.
 ###   
 Business Cycle Testing
 
-\[Business Cycle Testing should emulate the activities performed on the
+Business Cycle Testing should emulate the activities performed on the
 over time. A period should be identified, such as one year, and
 transactions and activities that would occur during a year’s period
 should be executed. This includes all daily, weekly, and monthly cycles,
-and events that are date-sensitive, such as ticklers.\]
+and events that are date-sensitive, such as ticklers.
 
 <table>
 <thead>
@@ -408,26 +405,26 @@ and events that are date-sensitive, such as ticklers.\]
 </tr>
 <tr class="even">
 <td>Oracles:</td>
-<td>[Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.]</td>
+<td>Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.</td>
 </tr>
 <tr class="odd">
 <td>Required Tools:</td>
-<td><p>[The technique requires the following tools:</p>
+<td><p>The technique requires the following tools:</p>
 <ul>
 <li><p>Test Script Automation Tool</p></li>
 <li><p>base configuration imager and restorer</p></li>
 <li><p>backup and recovery tools</p></li>
-<li><p>Data-generation tools]</p></li>
+<li><p>Data-generation tools</p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>Success Criteria:</td>
-<td>[The technique supports the testing of all critical business cycles.]</td>
+<td>The technique supports the testing of all critical business cycles.</td>
 </tr>
 <tr class="odd">
 <td>Special Considerations:</td>
-<td><p>• [System dates and events may require special support activities.</p>
-<p>• A business model is required to identify appropriate test requirements and procedures.]</p></td>
+<td><p>• System dates and events may require special support activities.</p>
+<p>• A business model is required to identify appropriate test requirements and procedures.</p></td>
 </tr>
 </tbody>
 </table>
@@ -435,21 +432,21 @@ and events that are date-sensitive, such as ticklers.\]
 ###   
 User Interface Testing
 
-\[User Interface (UI) testing verifies a user’s interaction with the
+User Interface (UI) testing verifies a user’s interaction with the
 software. The goal of UI testing is to ensure that the UI provides the
 user with the appropriate access and navigation through the functions of
 the target-of-test. In addition, UI testing ensures that the objects
 within the UI function as expected and conform to corporate or industry
-standards.\]
+standards.
 
 <table>
 <thead>
 <tr class="header">
 <th>Technique Objective:</th>
-<th><p>[Exercise the following to observe and log standards conformance and target behavior:</p>
+<th><p>Exercise the following to observe and log standards conformance and target behavior:</p>
 <ul>
 <li><p>Navigation through the target-of-test reflecting business functions and requirements, including window-to-window, field-to- field, and use of access methods (tab keys, mouse movements, accelerator keys).</p></li>
-<li><p>Window objects and characteristics can be exercised–such as menus, size, position, state, and focus.]</p></li>
+<li><p>Window objects and characteristics can be exercised–such as menus, size, position, state, and focus.</p></li>
 </ul></th>
 </tr>
 </thead>
@@ -460,7 +457,7 @@ standards.\]
 </tr>
 <tr class="even">
 <td>Oracles:</td>
-<td>[Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.]</td>
+<td>Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.</td>
 </tr>
 <tr class="odd">
 <td>Required Tools:</td>
