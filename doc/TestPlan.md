@@ -875,14 +875,14 @@ combinations may be active using different resources.\]
 <thead>
 <tr class="header">
 <th>Technique Objective:</th>
-<th>[Exercise the target-of-test on the required hardware and software configurations to observe and log target behavior under different configurations and identify changes in configuration state.]</th>
+<th>Exercise the target-of-test on the required hardware and software configurations to observe and log target behavior under different configurations and identify changes in configuration state.</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Technique:</td>
 <td><ul>
-<li><p>[Use Function Test scripts.</p></li>
+<li><p>Use Function Test scripts.</p></li>
 <li><p>Open and close various non-target-of-test related software, such as Microsoft Excel and Word applications, either as part of the test or prior to the start of the test.</p></li>
 <li><p>Execute selected transactions to simulate actors interacting with the target-of-test and the non-target-of-test software.</p></li>
 <li><p>Repeat the above process, minimizing the available conventional memory on the client workstation.]</p></li>
@@ -918,62 +918,7 @@ combinations may be active using different resources.\]
 
 ### Installation Testing
 
-\[Installation testing has two purposes. The first is to ensure that the
-software can be installed under different conditionssuch as a new
-installation, an upgrade, and a complete or custom installationunder
-normal and abnormal conditions. Abnormal conditions include insufficient
-disk space, lack of privilege to create directories, and so on. The
-second purpose is to verify that, once installed, the software operates
-correctly. This usually means running a number of the tests that were
-developed for Function Testing.\]
-
-<table>
-<thead>
-<tr class="header">
-<th>Technique Objective:</th>
-<th><p>[Exercise the installation of the target-of-test onto each required hardware configuration under the following conditions to observe and log installation behavior and configuration state changes:</p>
-<ul>
-<li><p>new installation: a new machine, never installed previously with</p></li>
-<li><p>update: a machine previously installed , same version</p></li>
-<li><p>update: a machine previously installed , older version]</p></li>
-</ul></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Technique:</td>
-<td><ul>
-<li><p>[Develop automated or manual scripts to validate the condition of the target machine.</p>
-<ul>
-<li><p>new: never installed</p></li>
-<li><p>same or older version already installed</p></li>
-</ul></li>
-<li><p>Launch or perform installation.</p></li>
-<li><p>Using a predetermined subset of Function Test scripts, run the transactions.]</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>Oracles:</td>
-<td>[Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.]</td>
-</tr>
-<tr class="odd">
-<td>Required Tools:</td>
-<td><p>[The technique requires the following tools:</p>
-<ul>
-<li><p>base configuration imager and restorer</p></li>
-<li><p>installation monitoring tools (registry, hard disk, CPU, memory, and so on)]</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>Success Criteria:</td>
-<td>[The technique supports the testing of the installation of the developed product in one or more installation configurations.]</td>
-</tr>
-<tr class="odd">
-<td>Special Considerations:</td>
-<td>[What transactions should be selected to comprise a confidence test that application has been successfully installed and no major software components are missing?]</td>
-</tr>
-</tbody>
-</table>
+(n/a)
 
 # Entry and Exit Criteria
 
@@ -998,194 +943,83 @@ completely executed, and under what criteria testing can be resumed.\]
 
 ## Test Cycles
 
+(tbd.)
+
 ### Test Cycle Entry Criteria
 
-\[Specify the criteria to be used to determine whether the test effort
-for the next Test Cycle of this **Test Plan** can begin.\]
+(tbd.)
 
 ### Test Cycle Exit Criteria
-
-\[Specify the criteria that will be used to determine whether the test
-effort for the current Test Cycle of this **Test Plan** is deemed
-sufficient.\]
+(tbd.)
 
 ### Test Cycle Abnormal Termination
 
-\[Specify the criteria that will be used to determine whether testing
-should be prematurely suspended or ended for the current test cycle, or
-whether the intended build candidate to be tested must be altered.\]
+(tbd.)
 
 # Deliverables
 
-\[In this section, list the various artifacts that will be created by
-the test effort that are useful deliverables to the various stakeholders
-of the test effort. Don’t list all work products; only list those that
-give direct, tangible benefit to a stakeholder and those by which you
-want the success of the test effort to be measured.\]
+(tbd.)
 
 ## Test Evaluation Summaries
 
-\[Provide a brief outline of both the form and content of the test
-evaluation summaries, and indicate how frequently they will be
-produced.\]
+(tbd.)
 
 ## Reporting on Test Coverage
 
-\[Provide a brief outline of both the form and content of the reports
-used to measure the extent of testing, and indicate how frequently they
-will be produced. Give an indication as to the method and tools used to
-record, measure, and report on the extent of testing.\]
+(tbd.)
 
 ## Perceived Quality Reports
 
-\[Provide a brief outline of both the form and content of the reports
-used to measure the perceived quality of the product, and indicate how
-frequently they will be produced. Give an indication about to the method
-and tools used to record, measure, and report on the perceived product
-quality. You might include some analysis of Incidents and Change Request
-over Test Coverage.\]
+(n/a)
 
 ## Incident Logs and Change Requests
 
-\[Provide a brief outline of both the method and tools used to record,
-track, and manage test incidents, associated change requests, and their
-status.\]
+(n/a)
 
 ## Smoke Test Suite and Supporting Test Scripts
 
-\[Provide a brief outline of the test assets that will be delivered to
-allow ongoing regression testing of subsequent product builds to help
-detect regressions in the product quality.\]
+(n/a)
 
 ## Additional Work Products
 
-\[In this section, identify the work products that are optional
-deliverables or those that should not be used to measure or assess the
-successful execution of the **Test Plan**.\]
+(n/a)
 
 ### Detailed Test Results
 
-\[This denotes either a collection of Microsoft Excel spreadsheets
-listing the results determined for each test case, or the repository of
-both test logs and determined results maintained by a specialized test
-product.\]
+(n/a)
 
 ### Additional Automated Functional Test Scripts
 
-\[These will be either a collection of the source code files for
-automated test scripts, or the repository of both source code and
-compiled executables for test scripts maintained by the test automation
-product.\]
+(N/A)
 
 ### Test Guidelines
 
-\[Test Guidelines cover a broad set of categories, including Test-Idea
-catalogs, Good Practice Guidance, Test patterns, Fault and Failure
-Models, Automation Design Standards, and so forth.\]
+Common Best Practices are used.
 
 ### Traceability Matrices
 
-\[Using a tool such as Rational RequisistePro or MS Excel, provide one
-or more matrices of traceability relationships between traced items.\]
+(n/a)
 
 # Testing Workflow
 
-\[Provide an outline of the workflow to be followed by the Test team in
-the development and execution of this **Test Plan**.\]
-
-The specific testing workflow that you will use should be documented
-separately in the project's Development Case. It should explain how the
-project has customized the base RUP test workflow (typically on a
-phase-by-phase basis). In most cases, we recommend you place a reference
-in this section of the **Test Plan** to the relevant section of the
-Development Case. It might be both useful and sufficient to simply
-include a diagram or image depicting your test workflow.
-
-More specific details of the individual testing tasks are defined in a
-number of different ways, depending on project culture; for example:
-
-  - defined as a list of tasks in this section of the **Test Plan**, or
-    in an accompanying appendix
-
-  - defined in a central project schedule (often in a scheduling tool
-    such as Microsoft Project)
-
-  - documented in individual, "dynamic" to-do lists for each team
-    member, which are usually too detailed to be placed in the **Test
-    Plan**
-
-  - documented on a centrally located whiteboard and updated dynamically
-
-  - not formally documented at all
-
-Based on your project culture, you should either list your specific
-testing tasks here or provide some descriptive text explaining the
-process your team uses to handle detailed task planning and provide a
-reference to where the details are stored, if appropriate.
-
-For Master Test Plans, we recommend avoiding detailed task planning,
-which is often an unproductive effort if done as a front-loaded activity
-at the beginning of the project. A Master Test Plan might usefully
-describe the phases and the number of iterations, and give an indication
-of what types of testing are generally planned for each Phase or
-Iteration.
-
-**Note**: Where process and detailed planning information is recorded
-centrally and separately from this Test Plan, you will have to manage
-the issues that will arise from having duplicate copies of the same
-information. To avoid team members referencing out-of-date information,
-we suggest that in this situation you place the minimum amount of
-process and planning information within the Test Plan to make ongoing
-maintenance easier and simply reference the "Master" source material.\]
+(n/a)
 
 # Environmental Needs
 
-\[This section presents the non-human resources required for the **Test
-Plan**.\]
+Android Studio with Kotlin plugin
 
 ## Base System Hardware
 
-The following table sets forth the system resources for the test effort
-presented in this *Test Plan*.
-
-\[The specific elements of the test system may not be fully understood
-in early iterations, so expect this section to be completed over time.
-We recommend that the system simulates the production environment,
-scaling down the concurrent access and database size, and so forth, if
-and where appropriate.\]
-
-\[**Note**: Add or delete items as appropriate.\]
-
-| **System Resources**                        |
-| ------------------------------------------- | ------------ | ----------------- |
-| **Resource**                                | **Quantity** | **Name and Type** |
-| Database Server                             |              |                   |
-| —Network or Subnet                          |              | TBD               |
-| —Server Name                                |              | TBD               |
-| —Database Name                              |              | TBD               |
-| Client Test PCs                             |              |                   |
-| —Include special configuration requirements |              | TBD               |
-| Test Repository                             |              |                   |
-| —Network or Subnet                          |              | TBD               |
-| —Server Name                                |              | TBD               |
-| Test Development PCs                        |              | TBD               |
-
+(n/a)
 ## Base Software Elements in the Test Environment
 
 The following base software elements are required in the test
 environment for this *Test Plan*.
-
-\[Note: Add or delete items as
-appropriate.\]
+(n/A)
 
 | **Software Element Name**               | **Version** | **Type and Other Notes**              |
 | --------------------------------------- | ----------- | ------------------------------------- |
-| NT Workstation                          |             | Operating System                      |
-| Windows 2000                            |             | Operating System                      |
-| Internet Explorer                       |             | Internet Browser                      |
-| Netscape Navigator                      |             | Internet Browser                      |
-| MS Outlook                              |             | eMail Client software                 |
-| Network Associates McAfee Virus Checker |             | Virus Detection and Recovery Software |
+
 
 ## Productivity and Support Tools
 
@@ -1209,13 +1043,15 @@ appropriate.\]
 
 ## Test Environment Configurations
 
+(n/a)
+
 The following Test Environment Configurations needs to be provided and
 supported for this
 project.
 
 | **Configuration Name**            | **Description** | **Implemented in Physical Configuration** |
 | --------------------------------- | --------------- | ----------------------------------------- |
-| Average user configuration        |                 |                                           |
+| Average user configuration        |                 |                1                          |
 | Minimal configuration supported   |                 |                                           |
 | Visually and mobility challenged  |                 |                                           |
 | International Double Byte OS      |                 |                                           |
@@ -1223,15 +1059,14 @@ project.
 
 # Responsibilities, Staffing, and Training Needs
 
-\[This section presents the required resources to address the test
-effort outlined in the **Test Plan**—the main responsibilities, and the
-knowledge or skill sets required of those resources.\]
+((n/a))
 
 ## People and Roles
 
+(tbd.)
+
 This table shows the staffing assumptions for the test effort.
 
-\[**Note**: Add or delete items as appropriate.\]
 
 <table>
 <thead>
@@ -1342,40 +1177,10 @@ This table shows the staffing assumptions for the test effort.
 
 ## Staffing and Training Needs
 
-This section outlines how to approach staffing and training the test
-roles for the project.
-
-\[The way to approach staffing and training will vary from project to
-project. If this section is part of a Master Test Plan, you should
-indicate at what points in the project lifecycle different skills and
-numbers of staff are needed. If this is an Iteration Test Plan, you
-should focus mainly on where and what training might occur during the
-Iteration.
-
-Give thought to your training needs, and plan to schedule this based on
-a Just-In-Time (JIT) approach—there is often a temptation to attend
-training too far in advance of its usage when the test team has apparent
-slack. Doing this introduces the risk of the training being forgotten by
-the time it's needed.
-
-Look for opportunities to combine the purchase of productivity tools
-with training on those tools, and arrange with the vendor to delay
-delivery of the training until just before you need it. If you have
-enough headcount, consider having training delivered in a customized
-manner for you, possibly at your own site.
-
-The test team often requires the support and skills of other team
-members not directly part of the test team. Make sure you arrange in
-your plan for appropriate availability of System Administrators,
-Database Administrators, and Developers who are required to enable the
-test effort.\]
+(n/a)
 
 # Iteration Milestones
 
-\[Identify the key schedule milestones that set the context for the
-Testing effort. Avoid repeating too much detail that is documented
-elsewhere in plans that address the entire
-project.\]
 
 | **Milestone**                    | **Planned Start Date** | **Actual Start Date** | **Planned End Date** | **Actual End Date** |
 | -------------------------------- | ---------------------- | --------------------- | -------------------- | ------------------- |
@@ -1443,15 +1248,6 @@ occurrence and the impact if the risk is realized.\]
 </tbody>
 </table>
 
-\[List any dependencies identified during the development of this **Test
-Plan** that may affect its successful execution if those dependencies
-are not honored. Typically these dependencies relate to activities on
-the critical path that are prerequisites or post-requisites to one or
-more preceding (or subsequent) activities You should consider
-responsibilities you are relying on other teams or staff members
-external to the test effort completing, timing and dependencies of other
-planned tasks, the reliance on certain work products being
-produced.\]
 
 | **Dependency between** | **Potential Impact of Dependency** | **Owners** |
 | ---------------------- | ---------------------------------- | ---------- |
@@ -1459,12 +1255,7 @@ produced.\]
 |                        |                                    |            |
 |                        |                                    |            |
 
-\[List any assumptions made during the development of this **Test Plan**
-that may affect its successful execution if those assumptions are proven
-incorrect. Assumptions might relate to work you assume other teams are
-doing, expectations that certain aspects of the product or environment
-are stable, and so
-forth\].
+
 
 | **Assumption to be proven** | **Impact of Assumption being incorrect** | **Owners** |
 | --------------------------- | ---------------------------------------- | ---------- |
@@ -1472,9 +1263,7 @@ forth\].
 |                             |                                          |            |
 |                             |                                          |            |
 
-\[List any constraints placed on the test effort that have had a
-negative effect on the way in which this **Test Plan** has been
-approached.\]
+
 
 | **Constraint on** | **Impact Constraint has on test effort** | **Owners** |
 | ----------------- | ---------------------------------------- | ---------- |
@@ -1484,47 +1273,27 @@ approached.\]
 
 # Management Process and Procedures
 
-\[Outline what processes and procedures are to be used when issues arise
-with the **Test Plan** and its enactment.\]
+(n/a)
 
 ## Measuring and Assessing the Extent of Testing
 
-\[Outline the measurement and assessment process to be used to track the
-extent of testing.\]
+(n/a)
 
 ## Assessing the Deliverables of this Test Plan
 
-\[Outline the assessment process for reviewing and accepting the
-deliverables of this **Test Plan**\]
+(n/a)
 
 ## Problem Reporting, Escalation, and Issue Resolution
 
-\[Define how process problems will be reported and escalated, and the
-process to be followed to achieve resolution.\]
+(n/a)
 
 ## Managing Test Cycles
-
-\[Outline the management control process for a test cycle.\]
+(n/a)
 
 ## Traceability Strategies
 
-\[Consider appropriate traceability strategies for:
-
-  - Coverage of Testing against Specifications — enables measurement the
-    extent of testing
-
-  - Motivations for Testing — enables assessment of relevance of tests
-    to help determine whether to maintain or retire tests
-
-  - Software Design Elements — enables tracking of subsequent design
-    changes that would necessitate rerunning tests or retiring them
-
-  - Resulting Change Requests — enables the tests that discovered the
-    need for the change to be identified and re-run to verify the change
-    request has been completed successfully\]
+(n/a)
 
 ## Approval and Signoff
 
-\[Outline the approval process and list the job titles (and names of
-current incumbents) that initially must approve the plan, and sign off
-on the plans satisfactory execution.\]
+(n/a)
