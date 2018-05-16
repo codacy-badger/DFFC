@@ -1,30 +1,13 @@
 Version \<1.0\>
 
-\[Note: The following template is provided for use with the Rational
-Unified Process. Text enclosed in square brackets and displayed in blue
-italics (style=InfoBlue) is included to provide guidance to the author
-and should be deleted before publishing the document. A paragraph
-entered following this style will automatically be set to normal
-(style=Body Text).\]
-
-\[To customize automatic fields in Microsoft Word (which display a gray
-background when selected), select File\>Properties and replace the
-Title, Subject and Company fields with the appropriate information for
-this document. After closing the dialog, automatic fields may be updated
-throughout the document by selecting Edit\>Select All (or Ctrl-A) and
-pressing F9, or simply click on the field and press F9. This must be
-done separately for Headers and Footers. Alt-F9 will toggle between
-displaying the field names and the field contents. See Word help for
-more information on working with fields.\]
-
 Revision History
 
 | **Date**      | **Version** | **Description** | **Author** |
 | ------------- | ----------- | --------------- | ---------- |
-| \<dd/mmm/yy\> | \<x.x\>     | \<details\>     | \<name\>   |
-|               |             |                 |            |
-|               |             |                 |            |
-|               |             |                 |            |
+| \<16/005/18\> | \<1.0\>     | \<Initial\>     |\<Florian   |
+|               |             |                 | Christof;  |
+|               |             |                 | Denny      |
+|               |             |                 | Flämig/>   |
 
 Table of Contents
 
@@ -177,7 +160,7 @@ top-level plan generated and used by managers to direct the test effort.
 
 This *Test Plan* for the supports the following objectives:
 
-• \[Identifies the items that should be targeted by the tests.
+• Identifies the items that should be targeted by the tests.
 
 • Identifies the motivation for and ideas behind the test areas to be
 covered.
@@ -187,79 +170,38 @@ covered.
 • Identifies the required resources and provides an estimate of the test
 efforts.
 
-• Lists the deliverable elements of the test project.\]
+• Lists the deliverable elements of the test project.
 
 ## Scope
 
-\[Describe the levels of testingfor example, Unit, Integration, or
-Systemand the types of testingsuch as Functionality, Usability,
-Reliability, Performance, and Supportabilitythat will be addressed by
-this **Test Plan**. It is also important to provide a general indication
-of significant areas that will be **excluded** from scope, especially
-where the intended audience might otherwise reasonably assume the
-inclusion of those areas.
-
-**Note**: Avoid placing detail here that you will repeat in sections 3,
-Target Test Items, and 4,Outline of Planned Tests.\]
+We do some Unit testing and some Integration Testing. Theres also some Surface Testing we did.
 
 ## Intended Audience
 
-\[Provide a brief description of the audience for whom you are writing
-the **Test Plan**. This helps readers of your document identify whether
-it is a document intended for their use, and helps prevent the document
-from being used inappropriately.
-
-**Note**: Document style and content often alters in relation to the
-intended audience.
-
-This section should only be about three to five paragraphs in length.\]
+The audience are our customers that want to know how our testing runs and what we test. For developers it might also be interesting.
 
 ## Document Terminology and Acronyms
 
-\[This subsection provides the definitions of any terms, acronyms, and
-abbreviations required to properly interpret the **Test Plan**. Avoid
-listing items that are generally applicable to the project as a whole
-and that are already defined in the project’s Glossary. Include a
-reference to the project’s Glossary in the References section.\]
+
 
 ##  References
 
-\[This subsection provides a list of the documents referenced elsewhere
-within the **Test Plan**. Identify each document by title, version (or
-report number if applicable), date, and publishing organization or
-original author. Avoid listing documents that are influential but not
-directly referenced. Specify the sources from which the “official
-versions” of the references can be obtained, such as intranet UNC names
-or document reference codes. This information may be provided by
-reference to an appendix or to another document.\]
 
 ## Document Structure
 
-\[This subsection outlines what the rest of the **Test Plan** contains
-and gives an introduction to how the rest of the document is organized.
-This section may be eliminated if a Table of Contents is used.\]
+(Table of Contents above)
 
 # Evaluation Mission and Test Motivation
 
-\[Provide an overview of the mission and motivation for the testing that
-will be conducted in this iteration.\]
+Our Motivation is to produce a perfect product. To ensure this and to show this to our customers we do Testing so everyone sees how great we are doing.
 
 ## Background
 
-\[Provide a brief description of the background surrounding why the test
-effort defined by this **Test Plan** will be undertaken. Include
-information such as the key problem being solved, the major benefits of
-the solution, the planned architecture of the solution, and a brief
-history of the project. Where this information is defined in other
-documents, you can include references to those other more detailed
-documents if appropriate. This section should only be about three to
-five paragraphs in length.\]
+Studies showed that you win the time that you spent on unit testing at the end of your project. The time at the end is mostly the most productive time and you save lot of time.
 
 ## Evaluation Mission
 
-\[Provide a brief statement that defines the mission for the evaluation
-effort in the current iteration. This statement might incorporate one or
-more concerns including:
+Our mission is to:
 
   - find as many bugs as possible
 
@@ -280,148 +222,96 @@ more concerns including:
   - and so forth
 
 Each mission provides a different context to the test effort and alters
-the way in which testing should be approached.\]
+the way in which testing should be approached.
 
 ## Test Motivators
 
-\[Provide an outline of the key elements that will motivate the testing
-effort in this iteration. Testing will be motivated by many
-thingsquality risks, technical risks, project risks, use cases,
+Our test motivators are quality risks, technical risks, project risks, use cases,
 functional requirements, non-functional requirements, design elements,
-suspected failures or faults, change requests, and so forth.\]
+suspected failures or faults, change requests.
 
 # Target Test Items
 
-The listing below identifies those test itemssoftware, hardware, and
-supporting product elements that have been identified as targets for
-testing. This list represents what items will be tested.
+- Units
+- Database
+- User interface
+- etc.
 
-\[Provide a high level list of the major target test items. This list
-should include both items produced directly by the project development
-team, and items that those products rely on; for example, basic
-processor hardware, peripheral devices, operating systems, third-party
-products or components, and so forth. Consider grouping the list by
-category and assigning relative importance to each motivator.\]
 
 # Outline of Planned Tests
 
-\[This section provides a high-level outline of the testing that will be
-performed. The outline in this section represents a high level overview
-of both the tests that will be performed and those that will not.\]
+- Example unit test
+- Test of our Data models
+  - Calendar
+  - DataTraffic
+
 
 ## Outline of Test Inclusions
 
-\[Provide a high level outline of the major testing planned for the
-current iteration. Note what will be included in the plan and record
-what will explicitly **not** be included in the section titled Outline
-of Test Exclusions.\]
+
 
 ## Outline of Other Candidates for Potential Inclusion
 
-\[Separately outline test areas you suspect might be useful to
-investigate and evaluate, but that have not been sufficiently researched
-to know if they are important to pursue.\]
+Maybe we will add some Instrumentation Test for our databaseHelper :) This needs a test context so its not testable by unit tests.
 
 ## Outline of Test Exclusions
 
-\[Provide a high level outline of the potential tests that might have
-been conducted but that have been **explicitly excluded** from this
-plan. If a type of test will not be implemented and executed, indicate
-this in a sentence stating the test will not be implemented or executed
-and stating the justification, such as:
-
-  - “These tests do not help achieve the evaluation mission.”
-
-  - “There are insufficient resources to conduct these tests.”
-
-  - “These tests are unnecessary due to the testing conducted by xxxx.”
-
-As a heuristic, if you think it would be reasonable for one of your
-audience members to expect a certain aspect of testing to be included
-that you will not or cannot address, you should note it’s exclusion: If
-the team agrees the exclusion is obvious, you probably don’t need to
-list it.\]
+We will not unit test our database, because you need a test context for it :) We also wont Unit test our activity create Methods because they are overwritten from another android class.
 
 # Test Approach
 
-\[The Test Approach presents the recommended strategy for designing and
-implementing the required tests. Sections 3, Target Test Items, and 4,
-Outline of Planned Tests, identified **what** items will be tested and
-**what** types of tests would be performed. This section describes
-**how** the tests will be realized.
-
-One aspect to consider for the test approach is the techniques to be
-used. This should include an outline of how each technique can be
-implemented, both from a manual and/or an automated perspective, and the
-criterion for knowing that the technique is useful and successful. For
-each technique, provide a description of the technique and define why it
-is an important part of the test approach by briefly outlining how it
-helps achieve the Evaluation Mission or addresses the Test Motivators.
-
-Another aspect to discuss in this section is the Fault or Failure models
-that are applicable and ways to approach evaluating them.
-
-As you define each aspect of the approach, you should update Section 10,
-Responsibilities, Staffing, and Training Needs, to document the test
-environment configuration and other resources that will be needed to
-implement each aspect.\]
+Test Driven Development means that you first create the test, then you try to implement the feature and make the tests pass.
 
 ## Initial Test-Idea Catalogs and Other Reference Sources
 
-\[Provide a listing of existing resources that will be referenced to
-stimulate the identification and selection of specific tests to be
-conducted. An example Test-Ideas Catalog is provided in the examples
-section of RUP.\]
 
 ## Testing Techniques and Types
 
 ### Data and Database Integrity Testing
 
-\[The databases and the database processes should be tested as an
+The databases and the database processes should be tested as an
 independent subsystem. This testing should test the subsystems without
 the target-of-test’s User Interface as the interface to the data.
 Additional research into the DataBase Management System (DBMS) needs to
 be performed to identify the tools and techniques that may exist to
-support the testing identified in the following table.\]
+support the testing identified in the following table.
 
 <table>
 <thead>
 <tr class="header">
 <th>Technique Objective:</th>
-<th>[Exercise database access methods and processes independent of the UI so you can observe and log incorrect functioning target behavior or data corruption.]</th>
+<th>Exercise database access methods and processes independent of the UI so you can observe and log incorrect functioning target behavior or data corruption.</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Technique:</td>
-<td><p>• [Invoke each database access method and process, seeding each with valid and invalid data or requests for data.</p>
-<p>• Inspect the database to ensure the data has been populated as intended and all database events have occurred properly, or review the returned data to ensure that the correct data was retrieved for the correct reasons.]</p></td>
+<td><p>• Invoke each database access method and process, seeding each with valid and invalid data or requests for data.</p>
+<p>• Inspect the database to ensure the data has been populated as intended and all database events have occurred properly, or review the returned data to ensure that the correct data was retrieved for the correct reasons.</p></td>
 </tr>
 <tr class="even">
 <td>Oracles:</td>
-<td>[Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.]</td>
+<td></td>
 </tr>
 <tr class="odd">
 <td>Required Tools:</td>
-<td><p>[The technique requires the following tools:</p>
+<td><p>The technique requires the following tools:</p>
 <ul>
 <li><p>Test Script Automation Tool</p></li>
 <li><p>base configuration imager and restorer</p></li>
 <li><p>backup and recovery tools</p></li>
 <li><p>installation-monitoring tools (registry, hard disk, CPU, memory, and so forth)</p></li>
 <li><p>database SQL utilities and tools</p></li>
-<li><p>Data-generation tools]</p></li>
+<li><p>Data-generation tools</p></li>
 </ul></td>
 </tr>
 <tr class="even">
 <td>Success Criteria:</td>
-<td>[The technique supports the testing of all key database access methods and processes.]</td>
+<td>The technique supports the testing of all key database access methods and processes.</td>
 </tr>
 <tr class="odd">
 <td>Special Considerations:</td>
 <td><ul>
-<li><p>[Testing may require a DBMS development environment or drivers to enter or modify data directly in the databases.</p></li>
-<li><p>Processes should be invoked manually.</p></li>
 <li><p>Small or minimally sized databases (limited number of records) should be used to increase the visibility of any non-acceptable events.]</p></li>
 </ul></td>
 </tr>
@@ -430,7 +320,7 @@ support the testing identified in the following table.\]
 
 ### Function Testing
 
-\[Function testing of the target-of-test should focus on any
+Function testing of the target-of-test should focus on any
 requirements for test that can be traced directly to use cases or
 business functions and business rules. The goals of these tests are to
 verify proper data acceptance, processing, and retrieval, and the
@@ -439,7 +329,7 @@ is based upon black box techniques; that is verifying the application
 and its internal processes by interacting with the application via the
 Graphical User Interface (GUI) and analyzing the output or results. The
 following table identifies an outline of the testing recommended for
-each application.\]
+each application.
 
 <table>
 <thead>
