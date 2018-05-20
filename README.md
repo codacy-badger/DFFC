@@ -1,7 +1,7 @@
 # DFFC
 ![alt text](https://github.com/flowriance/DFFC/blob/master/doc/logo.png "Logo")
 
-Projectteam for Software Engeneering at DHBW Karlsruhe, Germany.
+Projectteam for Software Engeneering at Cooperative State University Karlsruhe, Germany.
 
 <h1>WakeMeInTime</h1>
 <p>will be a automated alarm clock for your android device. <br />
