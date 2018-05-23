@@ -1,4 +1,4 @@
-package database;
+package com.wakemeintime.dffc.wakemeintime.database;
 
 /**
  * Created by Florian Christof on 28.11.2017.

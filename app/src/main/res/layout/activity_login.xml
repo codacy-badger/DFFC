@@ -80,6 +80,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:visibility="gone"
+            style="?android:attr/buttonBarStyle"
             tools:visibility="visible">
 
             <Button
@@ -88,6 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/sign_out"
+                style="?android:attr/buttonBarButtonStyle"
                 android:theme="@style/ThemeOverlay.MyDarkButton" />
 
             <Button
@@ -96,6 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/disconnect"
+                style="?android:attr/buttonBarButtonStyle"
                 android:theme="@style/ThemeOverlay.MyDarkButton" />
         </LinearLayout>
 

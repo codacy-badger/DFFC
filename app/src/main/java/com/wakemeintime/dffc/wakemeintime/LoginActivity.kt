@@ -1,5 +1,6 @@
-package com.wakemeintime.dffc.wakemeintime
+package com.wakemeintime.dffc.wakemeintime.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -8,10 +9,12 @@ import android.widget.TextView
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
+import com.google.android.gms.common.api.ResultCallback
+import com.google.android.gms.common.api.Status
+import com.wakemeintime.dffc.wakemeintime.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -20,26 +23,26 @@ class LoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLis
         Log.d("DFFC", "connection failed" + connectionResult)
     }
 
-
+    @Suppress("PrivatePropertyName")
     private val RC_SIGN_IN = 9001
     private var mStatusTextView: TextView? = null
-    private var mGoogleSignInClient: GoogleSignInClient? = null
     private var mGoogleApiClient: GoogleApiClient? = null
-
+    private var isLogin: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
+        updateUI2(isLogin)
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build()
 
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+        mGoogleApiClient = GoogleApiClient.Builder(this)
+                .enableAutoManage(this, this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                .build()
 
-        val account = GoogleSignIn.getLastSignedInAccount(this)
-        updateUI(account)
 
         sign_in_button.setOnClickListener({
             val signInIntend = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient)
@@ -47,13 +50,29 @@ class LoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLis
         })
 
         sign_out_and_disconnect.setOnClickListener({
-            Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback { updateUI(account) }
+            Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback {
+                object : ResultCallback<Status> {
+                    override fun onResult(status: Status) {
+                        updateUI2(status.isSuccess)
+                    }
+                }
+            }
         })
     }
 
-    private fun updateUI(account: GoogleSignInAccount?) {
-        if (account != null) {
-            mStatusTextView?.text = getString(R.string.signed_in_fmt, account.displayName)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == RC_SIGN_IN) {
+            val result = Auth.GoogleSignInApi.getSignInResultFromIntent(data)
+            updateUI2(result.isSuccess)
+        }
+    }
+
+    private fun updateUI2(isLogin: Boolean) {
+        if (isLogin) {
+            val account: GoogleSignInAccount? = GoogleSignIn.getLastSignedInAccount(this)
+            mStatusTextView?.text = getString(R.string.signed_in_fmt, account?.displayName)
 
             sign_in_button.visibility = View.GONE
             sign_out_and_disconnect.visibility = View.VISIBLE

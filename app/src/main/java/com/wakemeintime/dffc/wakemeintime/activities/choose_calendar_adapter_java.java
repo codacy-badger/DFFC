@@ -10,12 +10,11 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
 import com.wakemeintime.dffc.wakemeintime.R;
+import com.wakemeintime.dffc.wakemeintime.database.Calendar;
+import com.wakemeintime.dffc.wakemeintime.database.DatabaseHelper;
 
 import java.util.ArrayList;
 import java.util.Objects;
-
-import database.Calendar;
-import database.DatabaseHelper;
 
 /**
  * Created by Florian Christof on 29.11.2017.
