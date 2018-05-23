@@ -33,11 +33,12 @@ platforms, specifically the Android system.
 1.3 Definitions, Acronyms, and Abbreviations
 --------------------------------------------
 
-| Acronyms | Description                       |
-|----------|-----------------------------------|
-| MVC      | Model-View-Controller             |
-| App      | Application                       |
-| API      | Application-Programming-Interface |
+| Acronyms | Description                        |
+|----------|------------------------------------|
+| MVC      | Model-View-Controller              |
+| App      | Application                        |
+| API      | Application-Programming-Interface  |
+| IDE      | Integrated Development Environment |
 
 1.4 References
 --------------
@@ -101,17 +102,25 @@ The app has access to the alarm and can set it and change the alarm settings.
 The app will show you various notifications about your appointments, or how much
 time you have left.
 
-### 3.1.8 Change settings
-
-The user can change various app setting.
-
-### 3.1.9 [Choose calendars](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_ChooseCalendars.md)
+### 3.1.8 [Choose calendars](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_ChooseCalendars.md)
 
 The user can select which calendars he wants to use for setting his alarm.
 
-### 3.1.10 [Get overview](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_GetOverview.md)
+### 3.1.9 [Get overview](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_GetOverview.md)
 
 The user gets an overview about his alarms, his meetings and his personalized live traffic data.
+
+### 3.1.8 [Change alarm settings](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_ChangeAlarmSettings.md)
+
+The user can change alarm setting.
+
+### 3.1.8 [Change morning routine settings](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_ChangeMorningRoutineSettings.md)
+
+The user can change various morning routine setting.
+
+### 3.1.8 [Change transportation settings](https://github.com/flowriance/DFFC/blob/master/doc/Specifications/UC_ChangeTransportationSettings.md)
+
+The user can change various transportation setting.
 
 3.2 Usability
 -------------
@@ -179,11 +188,23 @@ The programming of this application will follow the MVC architecture pattern. It
 decouples the major components model, view and controller. The model contains
 the business logic, the view shows the result to the user and the controller is
 the intermediary between those two. This allows for efficient code reuse and
-parallel development.
+parallel development. 
 
 ### 3.5.2 Programming language
 
 This application will be programmed in Kotlin and Java.
+
+### 3.5.3 Version Control
+
+Our project is hosted on GitHub, so we do Version Control with git.
+
+### 3.5.4 IDE
+
+Our IDE is Android Studio. Our project is supported since version 3.0 because it's the first version supporting Kotlin. We use it with a Youtrack Plugin and a Cucumber Plugin for Testing.
+
+### 3.5.5 Project management
+
+For project management we use Youtrack. For the best experience it's connected with GitHub and Android Studio.
 
 3.7 On-line User Documentation and Help System Requirements
 -----------------------------------------------------------

@@ -14,4 +14,19 @@ public class Calendar {
         this.description = description;
         this.isActive = isActive;
     }
+    public boolean IsisActiveValidBoolean(){
+        if(isActive =="true" || isActive=="false"){
+            return true;
+        }else {
+            return false;
+        }
+    }
+    //nur mit methode IsStringValidBoolean() verwenden
+    public boolean StringToBool(String x){
+        if(x =="true"){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
