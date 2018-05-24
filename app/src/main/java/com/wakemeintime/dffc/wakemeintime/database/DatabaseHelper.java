@@ -334,14 +334,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // LEFT OUTER JOIN USERS
         // ON CalendarS.KEY_Calendar_USER_ID_FK = USERS.KEY_USER_ID
         String CALENDAR_SELECT_QUERY =
-                String.format("SELECT * FROM %s ",
-                        Constants.TABLE_CALENDAR);
+                String.format("SELECT * FROM %s ", Constants.TABLE_CALENDAR);
 
         // "getReadableDatabase()" and "getWriteableDatabase()" return the same object (except under low
         // disk space scenarios)
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery(CALENDAR_SELECT_QUERY, null);
-        try {
+
+        try(Cursor cursor = getReadableDatabase().rawQuery(CALENDAR_SELECT_QUERY, null)) {
             if (cursor.moveToFirst()) {
                 do {
                     Calendar newCalendar = new Calendar(cursor.getString(cursor.getColumnIndex(Constants.KEY_CALENDAR_NAME)), cursor.getString(cursor.getColumnIndex(Constants.KEY_CALENDAR_DESCRIPTION)), cursor.getString(cursor.getColumnIndex(Constants.KEY_CALENDAR_IS_ACTIVE)));
@@ -350,10 +348,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         } catch (Exception e) {
             Log.d(Constants.TAG, "Error while trying to get Calendars from database");
-        } finally {
-            if (cursor != null && !cursor.isClosed()) {
-                cursor.close();
-            }
         }
         return calendars;
     }
