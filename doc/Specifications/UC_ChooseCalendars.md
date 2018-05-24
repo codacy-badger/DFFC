@@ -42,7 +42,7 @@ To be determined.
 
 [logo]: https://github.com/flowriance/DFFC/blob/master/doc/Mockup_ChooseCalendar.png "Mockup: Choose calendar"
 
-*Feature file:*
+[*Feature file:*](https://github.com/flowriance/DFFC/blob/master/app/src/androidTest/assets/features/chooseCalendar.feature)
 
 **choosseCalendar.feature**
 

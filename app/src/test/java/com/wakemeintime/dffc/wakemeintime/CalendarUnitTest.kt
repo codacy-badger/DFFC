@@ -28,3 +28,4 @@ class CalendarUnitTest {
         assertTrue(cal.IsisActiveValidBoolean())
     }
 }
+>>>>>>> 5c6d409bf552fe9d6aab47052ddabcb2714180a9

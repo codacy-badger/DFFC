@@ -1,4 +1,4 @@
-package com.wakemeintime.dffc.wakemeintime
+package com.wakemeintime.dffc.wakemeintime.activities
 
 import android.annotation.TargetApi
 import android.content.Context
@@ -9,8 +9,11 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.preference.*
+import android.preference.Preference
 import android.text.TextUtils
 import android.view.MenuItem
+import com.wakemeintime.dffc.wakemeintime.R
+
 
 /**
  * A [PreferenceActivity] that presents a set of application settings. On
@@ -57,15 +60,46 @@ class SettingsActivity : AppCompatPreferenceActivity() {
      */
     override fun isValidFragment(fragmentName: String): Boolean {
         return PreferenceFragment::class.java.name == fragmentName
+                || GeneralPreferenceFragment::class.java.name == fragmentName
                 || MorningRoutinePreferenceFragment::class.java.name == fragmentName
                 || TransportationPreferenceFragment::class.java.name == fragmentName
                 || AlarmPreferenceFragment::class.java.name == fragmentName
+                || NotificationPreferenceFragment::class.java.name == fragmentName
     }
 
     /**
      * This fragment shows general preferences only. It is used when the
      * activity is showing a two-pane settings UI.
      */
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    class GeneralPreferenceFragment : PreferenceFragment() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            addPreferencesFromResource(R.xml.pref_general)
+            setHasOptionsMenu(true)
+            val button = findPreference("resetButton")
+            button.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+                //code for what you want it to do
+                true
+            }
+
+            // Bind the summaries of EditText/List/Dialog/Ringtone preferences
+            // to their values. When their values change, their summaries are
+            // updated to reflect the new value, per the Android Design
+            // guidelines.
+        }
+
+        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+            val id = item.itemId
+            if (id == android.R.id.home) {
+                startActivity(Intent(activity, SettingsActivity::class.java))
+                return true
+            }
+            return super.onOptionsItemSelected(item)
+        }
+    }
+
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     class MorningRoutinePreferenceFragment : PreferenceFragment() {
         override fun onCreate(savedInstanceState: Bundle?) {
@@ -95,6 +129,8 @@ class SettingsActivity : AppCompatPreferenceActivity() {
      * This fragment shows notification preferences only. It is used when the
      * activity is showing a two-pane settings UI.
      */
+
+
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     class AlarmPreferenceFragment : PreferenceFragment() {
         override fun onCreate(savedInstanceState: Bundle?) {
@@ -149,6 +185,36 @@ class SettingsActivity : AppCompatPreferenceActivity() {
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    class NotificationPreferenceFragment : PreferenceFragment() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            addPreferencesFromResource(R.xml.pref_notification)
+            setHasOptionsMenu(true)
+
+            // Bind the summaries of EditText/List/Dialog/Ringtone preferences
+            // to their values. When their values change, their summaries are
+            // updated to reflect the new value, per the Android Design
+            // guidelines.
+            bindPreferenceSummaryToValue(findPreference("pref_notification_amount"))
+        }
+
+        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+            val id = item.itemId
+            if (id == android.R.id.home) {
+                startActivity(Intent(activity, SettingsActivity::class.java))
+                return true
+            }
+            return super.onOptionsItemSelected(item)
+        }
+    }
+
+    /**
+     * This fragment shows notification preferences only. It is used when the
+     * activity is showing a two-pane settings UI.
+     */
+
+
     companion object {
 
         /**
@@ -160,14 +226,13 @@ class SettingsActivity : AppCompatPreferenceActivity() {
 
             if (preference is ListPreference) {
                 // For list preferences, look up the correct display value in
-                // the preference's 'entries' list.
-                val listPreference = preference
-                val index = listPreference.findIndexOfValue(stringValue)
+                // the preference's 'entries' list
+                val index = preference.findIndexOfValue(stringValue)
 
                 // Set the summary to reflect the new value.
                 preference.setSummary(
                         if (index >= 0)
-                            listPreference.entries[index]
+                            preference.entries[index]
                         else
                             null)
 
