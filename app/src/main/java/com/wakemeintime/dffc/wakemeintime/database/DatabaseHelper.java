@@ -174,6 +174,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return calendarId;
     }
 
+    public long addOrUpdate(String tableName, ContentValues values, String whereClause,String[] whereArgs ){
+        SQLiteDatabase db = getWritableDatabase();
+        long tableID = -1;
+
+        db.beginTransaction();
+
+        try {
+            int rowsAffectedByUpdate = db.update(tableName, values, whereClause, whereArgs);
+
+            // Check if update succeeded
+            if (rowsAffectedByUpdate == 1) {
+                // Get the primary key of the calendar we just updated TODO  add density as argument
+                String usersSelectQuery = String.format("SELECT %s FROM %s WHERE %s = ?",
+                        Constants.KEY_TRAFFICDATA_ID, Constants.TABLE_TRAFFICDATA, Constants.KEY_TRAFFICDATA_TRAVELTIME);
+                Cursor cursor = db.rawQuery(usersSelectQuery, new String[]{String.valueOf(trafficData.travelTime)});
+                try {
+                    if (cursor.moveToFirst()) {
+                        tableID = cursor.getInt(0);
+                        db.setTransactionSuccessful();
+                    }
+                } finally {
+                    if (cursor != null && !cursor.isClosed()) {
+                        cursor.close();
+                    }
+                }
+            } else {
+                // user with this userName did not already exist, so insert new user
+                tableID = db.insertOrThrow(Constants.TABLE_TRAFFICDATA, null, values);
+                db.setTransactionSuccessful();
+            }
+        } catch (Exception e) {
+            Log.d(Constants.TAG, "Error while trying to add or update trafficData");
+        } finally {
+            db.endTransaction();
+        }
+        return tableID;
+    }
+
+
+
+
     public long addOrUpdateTrafficData(TrafficData trafficData) {
         // The database connection is cached so it's not expensive to call getWriteableDatabase() multiple times.
         SQLiteDatabase db = getWritableDatabase();
