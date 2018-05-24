@@ -188,15 +188,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 // Get the primary key of the calendar we just updated TODO  add density as argument
                 String usersSelectQuery = String.format("SELECT %s FROM %s WHERE %s = ?",
                         Constants.KEY_TRAFFICDATA_ID, Constants.TABLE_TRAFFICDATA, Constants.KEY_TRAFFICDATA_TRAVELTIME);
-                Cursor cursor = db.rawQuery(usersSelectQuery, new String[]{String.valueOf(trafficData.travelTime)});
-                try {
+                try(Cursor cursor = db.rawQuery(usersSelectQuery, new String[]{String.valueOf(trafficData.travelTime)})) {
                     if (cursor.moveToFirst()) {
                         tableID = cursor.getInt(0);
                         db.setTransactionSuccessful();
-                    }
-                } finally {
-                    if (cursor != null && !cursor.isClosed()) {
-                        cursor.close();
                     }
                 }
             } else {
