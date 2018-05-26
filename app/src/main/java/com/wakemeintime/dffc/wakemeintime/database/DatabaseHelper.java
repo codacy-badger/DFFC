@@ -130,79 +130,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // (https://code.google.com/p/android/issues/detail?id=13045) so we need to fall back to the more
     // verbose option of querying for the user's primary key if we did an update.
     public long addOrUpdateCalendar(Calendar calendar) {
-        // The database connection is cached so it's not expensive to call getWriteableDatabase() multiple times.
-        SQLiteDatabase db = getWritableDatabase();
-        long calendarId = -1;
 
-        db.beginTransaction();
-        try {
-            ContentValues values = new ContentValues();
-            values.put(Constants.KEY_CALENDAR_NAME, calendar.name);
-            values.put(Constants.KEY_CALENDAR_DESCRIPTION, calendar.description);
-            values.put(Constants.KEY_CALENDAR_IS_ACTIVE, calendar.isActive);
+        ContentValues values = new ContentValues();
+        values.put(Constants.KEY_CALENDAR_NAME, calendar.name);
+        values.put(Constants.KEY_CALENDAR_DESCRIPTION, calendar.description);
+        values.put(Constants.KEY_CALENDAR_IS_ACTIVE, calendar.isActive);
 
-            // First try to update the user in case the user already exists in the database
-            // This assumes calendarNames are unique
-            int rows = db.update(Constants.TABLE_CALENDAR, values, Constants.KEY_CALENDAR_NAME + "= ?", new String[]{calendar.name});
+        String usersSelectQuery = String.format("SELECT %s FROM %s WHERE %s = ?",
+                Constants.KEY_CALENDAR_ID, Constants.TABLE_CALENDAR, Constants.KEY_CALENDAR_NAME);
 
-            // Check if update succeeded
-            if (rows == 1) {
-                // Get the primary key of the calendar we just updated
-                String usersSelectQuery = String.format("SELECT %s FROM %s WHERE %s = ?",
-                        Constants.KEY_CALENDAR_ID, Constants.TABLE_CALENDAR, Constants.KEY_CALENDAR_NAME);
-                Cursor cursor = db.rawQuery(usersSelectQuery, new String[]{String.valueOf(calendar.name)});
-                try {
-                    if (cursor.moveToFirst()) {
-                        calendarId = cursor.getInt(0);
-                        db.setTransactionSuccessful();
-                    }
-                } finally {
-                    if (cursor != null && !cursor.isClosed()) {
-                        cursor.close();
-                    }
-                }
-            } else {
-                // user with this userName did not already exist, so insert new user
-                calendarId = db.insertOrThrow(Constants.TABLE_CALENDAR, null, values);
-                db.setTransactionSuccessful();
-            }
-        } catch (Exception e) {
-            Log.d(Constants.TAG, "Error while trying to add or update calendar");
-        } finally {
-            db.endTransaction();
-        }
-        return calendarId;
-    }
+        String whereClause = Constants.KEY_CALENDAR_NAME + "= ?";
 
-    public long addOrUpdate(String tableName, ContentValues values, String whereClause,String[] whereArgs ){
-        SQLiteDatabase db = getWritableDatabase();
+        String[] whereArgs = new String[]{calendar.name};
+
+        return addOrUpdate(Constants.TABLE_CALENDAR,values,whereClause, whereArgs, usersSelectQuery);
+   }
+
+    private long addOrUpdate(String tableName, ContentValues values, String whereClause,String[] whereArgs, String usersSelectQuery ){
         long tableID = -1;
 
-        db.beginTransaction();
+        try(SQLiteDatabase db = getWritableDatabase()) {
+            db.beginTransaction();
 
-        try {
             int rowsAffectedByUpdate = db.update(tableName, values, whereClause, whereArgs);
 
-            // Check if update succeeded
             if (rowsAffectedByUpdate == 1) {
-                // Get the primary key of the calendar we just updated TODO  add density as argument
-                String usersSelectQuery = String.format("SELECT %s FROM %s WHERE %s = ?",
-                        Constants.KEY_TRAFFICDATA_ID, Constants.TABLE_TRAFFICDATA, Constants.KEY_TRAFFICDATA_TRAVELTIME);
-                try(Cursor cursor = db.rawQuery(usersSelectQuery, new String[]{String.valueOf(trafficData.travelTime)})) {
+
+                try(Cursor cursor = db.rawQuery(usersSelectQuery, null)) {
                     if (cursor.moveToFirst()) {
                         tableID = cursor.getInt(0);
                         db.setTransactionSuccessful();
                     }
                 }
-            } else {
-                // user with this userName did not already exist, so insert new user
-                tableID = db.insertOrThrow(Constants.TABLE_TRAFFICDATA, null, values);
+            } else
+                tableID = db.insertOrThrow(tableName, null, values);
                 db.setTransactionSuccessful();
             }
-        } catch (Exception e) {
-            Log.d(Constants.TAG, "Error while trying to add or update trafficData");
-        } finally {
-            db.endTransaction();
+        catch (Exception e) {
+            Log.d(Constants.TAG, "Error while trying to add or update table");
         }
         return tableID;
     }
@@ -211,141 +176,57 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public long addOrUpdateTrafficData(TrafficData trafficData) {
-        // The database connection is cached so it's not expensive to call getWriteableDatabase() multiple times.
-        SQLiteDatabase db = getWritableDatabase();
-        long trafficDataId = -1;
 
-        db.beginTransaction();
-        try {
-            ContentValues values = new ContentValues();
-            values.put(Constants.KEY_TRAFFICDATA_TRAVELTIME, trafficData.travelTime);
-            values.put(Constants.KEY_TRAFFICDATA_TRAFFIC_DENSITY, trafficData.trafficDensity);
+        ContentValues values = new ContentValues();
+        values.put(Constants.KEY_TRAFFICDATA_TRAVELTIME, trafficData.travelTime);
+        values.put(Constants.KEY_TRAFFICDATA_TRAFFIC_DENSITY, trafficData.trafficDensity);
 
-            // First try to update the user in case the user already exists in the database
-            // This assumes calendarNames are unique TODO add density as argument
-            int rows = db.update(Constants.TABLE_TRAFFICDATA, values, Constants.KEY_TRAFFICDATA_TRAVELTIME + "= ?", new String[]{String.valueOf(trafficData.travelTime)});
+        String usersSelectQuery = String.format("SELECT %s FROM %s WHERE %s = ?",
+                Constants.KEY_TRAFFICDATA_ID, Constants.TABLE_TRAFFICDATA, Constants.KEY_TRAFFICDATA_TRAVELTIME);
 
-            // Check if update succeeded
-            if (rows == 1) {
-                // Get the primary key of the calendar we just updated TODO  add density as argument
-                String usersSelectQuery = String.format("SELECT %s FROM %s WHERE %s = ?",
-                        Constants.KEY_TRAFFICDATA_ID, Constants.TABLE_TRAFFICDATA, Constants.KEY_TRAFFICDATA_TRAVELTIME);
-                Cursor cursor = db.rawQuery(usersSelectQuery, new String[]{String.valueOf(trafficData.travelTime)});
-                try {
-                    if (cursor.moveToFirst()) {
-                        trafficDataId = cursor.getInt(0);
-                        db.setTransactionSuccessful();
-                    }
-                } finally {
-                    if (cursor != null && !cursor.isClosed()) {
-                        cursor.close();
-                    }
-                }
-            } else {
-                // user with this userName did not already exist, so insert new user
-                trafficDataId = db.insertOrThrow(Constants.TABLE_TRAFFICDATA, null, values);
-                db.setTransactionSuccessful();
-            }
-        } catch (Exception e) {
-            Log.d(Constants.TAG, "Error while trying to add or update trafficData");
-        } finally {
-            db.endTransaction();
-        }
-        return trafficDataId;
+        String whereClause = Constants.KEY_TRAFFICDATA_TRAVELTIME + "= ?";
+
+        String[] whereArgs = new String[]{String.valueOf(trafficData.travelTime)};
+
+        return addOrUpdate(Constants.TABLE_CALENDAR,values,whereClause, whereArgs, usersSelectQuery);
     }
 
     public long addOrUpdateCalendarEntry(CalendarEntry calendarEntry) {
-        // The database connection is cached so it's not expensive to call getWriteableDatabase() multiple times.
-        SQLiteDatabase db = getWritableDatabase();
-        long calendarEntryId = -1;
         long calendarID = addOrUpdateCalendar(calendarEntry.calendarId);
-        db.beginTransaction();
-        try {
-            ContentValues values = new ContentValues();
-            values.put(Constants.KEY_CALENDARENTRY_NAME, calendarEntry.name);
-            values.put(Constants.KEY_CALENDARENTRY_DESCRIPTION, calendarEntry.description);
-            values.put(Constants.KEY_CALENDARENTRY_TIME, calendarEntry.time);
-            values.put(Constants.KEY_CALENDARENTRY_PLACE, calendarEntry.place);
-            values.put(Constants.KEY_CALENDARENTRY_CALENDAR_ID_FK, calendarID);
+        ContentValues values = new ContentValues();
+        values.put(Constants.KEY_CALENDARENTRY_NAME, calendarEntry.name);
+        values.put(Constants.KEY_CALENDARENTRY_DESCRIPTION, calendarEntry.description);
+        values.put(Constants.KEY_CALENDARENTRY_TIME, calendarEntry.time);
+        values.put(Constants.KEY_CALENDARENTRY_PLACE, calendarEntry.place);
+        values.put(Constants.KEY_CALENDARENTRY_CALENDAR_ID_FK, calendarID);
 
-            // First try to update the user in case the user already exists in the database
-            // This assumes calendarEntryNames are unique TODO assume other stuff
-            int rows = db.update(Constants.TABLE_CALENDARENTRY, values, Constants.KEY_CALENDARENTRY_NAME + "= ?", new String[]{calendarEntry.name});
+        String usersSelectQuery = String.format("SELECT %s FROM %s WHERE %s = ?",
+                Constants.KEY_TRAFFICDATA_ID, Constants.TABLE_TRAFFICDATA, Constants.KEY_TRAFFICDATA_TRAVELTIME);
 
-            // Check if update succeeded
-            if (rows == 1) {
-                // Get the primary key of the calendarEntry we just updated
-                String usersSelectQuery = String.format("SELECT %s FROM %s WHERE %s = ?",
-                        Constants.KEY_CALENDARENTRY_ID, Constants.TABLE_CALENDARENTRY, Constants.KEY_CALENDARENTRY_NAME);
-                Cursor cursor = db.rawQuery(usersSelectQuery, new String[]{String.valueOf(calendarEntry.name)});
-                try {
-                    if (cursor.moveToFirst()) {
-                        calendarEntryId = cursor.getInt(0);
-                        db.setTransactionSuccessful();
-                    }
-                } finally {
-                    if (cursor != null && !cursor.isClosed()) {
-                        cursor.close();
-                    }
-                }
-            } else {
-                // user with this userName did not already exist, so insert new user
-                calendarEntryId = db.insertOrThrow(Constants.TABLE_CALENDAR, null, values);
-                db.setTransactionSuccessful();
-            }
-        } catch (Exception e) {
-            Log.d(Constants.TAG, "Error while trying to add or update calendarEntry");
-        } finally {
-            db.endTransaction();
-        }
-        return calendarEntryId;
+        String whereClause = Constants.KEY_CALENDARENTRY_NAME + "= ?";
+
+        String[] whereArgs = new String[]{calendarEntry.name};
+
+        return addOrUpdate(Constants.TABLE_CALENDAR,values,whereClause, whereArgs, usersSelectQuery);
     }
 
     public long addOrUpdateAppointment(Appointment appointment) {
-        // The database connection is cached so it's not expensive to call getWriteableDatabase() multiple times.
-        SQLiteDatabase db = getWritableDatabase();
-        long calendarEntryId = -1;
         long trafficDataID = addOrUpdateTrafficData(appointment.trafficDataId);
         long calendarEntryID = addOrUpdateCalendarEntry(appointment.calendarEntryId);
-        db.beginTransaction();
-        try {
-            ContentValues values = new ContentValues();
-            values.put(Constants.KEY_APPOINTMENT_DISABLED, appointment.disabled);
-            values.put(Constants.KEY_APPOINTMENT_REFRESH_TIME, appointment.refreshTime);
-            values.put(Constants.KEY_APPOINTMENT_CALENDARENTRY_ID_FK, calendarEntryID);
-            values.put(Constants.KEY_APPOINTMENT_TRAFFICDATA_ID_FK, trafficDataID);
+        ContentValues values = new ContentValues();
+        values.put(Constants.KEY_APPOINTMENT_DISABLED, appointment.disabled);
+        values.put(Constants.KEY_APPOINTMENT_REFRESH_TIME, appointment.refreshTime);
+        values.put(Constants.KEY_APPOINTMENT_CALENDARENTRY_ID_FK, calendarEntryID);
+        values.put(Constants.KEY_APPOINTMENT_TRAFFICDATA_ID_FK, trafficDataID);
 
-            // First try to update the user in case the user already exists in the database
-            // This assumes calendarEntryNames are unique TODO assume other stuff
-            int rows = db.update(Constants.TABLE_APPOINTMENT, values, Constants.KEY_APPOINTMENT_CALENDARENTRY_ID_FK + "= ?", new String[]{String.valueOf(calendarEntryID)});
+        String usersSelectQuery = String.format("SELECT %s FROM %s WHERE %s = ?",
+                Constants.KEY_TRAFFICDATA_ID, Constants.TABLE_TRAFFICDATA, Constants.KEY_TRAFFICDATA_TRAVELTIME);
 
-            // Check if update succeeded
-            if (rows == 1) {
-                // Get the primary key of the calendarEntry we just updated
-                String usersSelectQuery = String.format("SELECT %s FROM %s WHERE %s = ?",
-                        Constants.KEY_APPOINTMENT_ID, Constants.TABLE_APPOINTMENT, Constants.KEY_APPOINTMENT_CALENDARENTRY_ID_FK);
-                Cursor cursor = db.rawQuery(usersSelectQuery, new String[]{String.valueOf(calendarEntryID)});
-                try {
-                    if (cursor.moveToFirst()) {
-                        calendarEntryId = cursor.getInt(0);
-                        db.setTransactionSuccessful();
-                    }
-                } finally {
-                    if (cursor != null && !cursor.isClosed()) {
-                        cursor.close();
-                    }
-                }
-            } else {
-                // user with this userName did not already exist, so insert new user
-                calendarEntryId = db.insertOrThrow(Constants.TABLE_APPOINTMENT, null, values);
-                db.setTransactionSuccessful();
-            }
-        } catch (Exception e) {
-            Log.d(Constants.TAG, "Error while trying to add or update Appointment");
-        } finally {
-            db.endTransaction();
-        }
-        return calendarEntryId;
+        String whereClause = Constants.KEY_APPOINTMENT_CALENDARENTRY_ID_FK + "= ?";
+
+        String[] whereArgs =  new String[]{String.valueOf(calendarEntryID)};
+
+        return addOrUpdate(Constants.TABLE_CALENDAR,values,whereClause, whereArgs, usersSelectQuery);
     }
 
     public void deleteAllCalendar() {
