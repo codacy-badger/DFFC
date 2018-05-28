@@ -7,6 +7,8 @@ import android.util.Log;
 import com.wakemeintime.dffc.wakemeintime.database.dataObjects.Calendar;
 import com.wakemeintime.dffc.wakemeintime.database.dataObjects.CalendarEntry;
 
+import java.util.List;
+
 public class ReadCalendarEntry implements ReadBehavior {
 
     @Override
@@ -27,5 +29,10 @@ public class ReadCalendarEntry implements ReadBehavior {
             Log.d(Constants.TAG, "Error while trying to get CalendarEntry from database");
         }
         return newCalendarEntry;
+    }
+
+    @Override
+    public List readAll(SQLiteDatabase db) {
+        return null;
     }
 }

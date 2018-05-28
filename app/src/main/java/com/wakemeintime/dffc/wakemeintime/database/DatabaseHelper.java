@@ -136,7 +136,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // verbose option of querying for the user's primary key if we did an update.
 
 
-
     public long addOrUpdateCalendar(Calendar calendar) {
 
         ContentValues values = new ContentValues();
@@ -235,127 +234,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void deleteAllCalendar() {
+        DeleteBehavior deleteCalendar = new DeleteTable();
 
-        SQLiteDatabase db = getWritableDatabase();
-
-        db.beginTransaction();
-        try {
-            db.delete(Constants.TABLE_CALENDAR, null, null);
-
-        } catch (Exception e) {
-            Log.d(Constants.TAG, "Error while trying to delete calendar");
-        } finally {
-            db.endTransaction();
-        }
+        deleteCalendar.delete(getWritableDatabase(), Constants.TABLE_CALENDAR);
     }
 
     public List<Calendar> getAllCalendar() {
-        List<Calendar> calendars = new ArrayList<>();
+        ReadBehavior readBehavior = new ReadCalendar();
 
-        // SELECT * FROM CalendarS
-        // LEFT OUTER JOIN USERS
-        // ON CalendarS.KEY_Calendar_USER_ID_FK = USERS.KEY_USER_ID
-        String CALENDAR_SELECT_QUERY =
-                String.format("SELECT * FROM %s ", Constants.TABLE_CALENDAR);
-
-        // "getReadableDatabase()" and "getWriteableDatabase()" return the same object (except under low
-        // disk space scenarios)
-
-        try (Cursor cursor = getReadableDatabase().rawQuery(CALENDAR_SELECT_QUERY, null)) {
-            if (cursor.moveToFirst()) {
-                do {
-                    Calendar newCalendar = new Calendar(cursor.getString(cursor.getColumnIndex(Constants.KEY_CALENDAR_NAME)), cursor.getString(cursor.getColumnIndex(Constants.KEY_CALENDAR_DESCRIPTION)), cursor.getString(cursor.getColumnIndex(Constants.KEY_CALENDAR_IS_ACTIVE)));
-                    calendars.add(newCalendar);
-                } while (cursor.moveToNext());
-            }
-        } catch (Exception e) {
-            Log.d(Constants.TAG, "Error while trying to get Calendars from database");
-        }
-        return calendars;
+        return (List<Calendar>) readBehavior.readAll(getReadableDatabase());
     }
 
     public List<Appointment> getAppointments() {
-        List<Appointment> appointments = new ArrayList<>();
+        ReadBehavior readBehavior = new ReadAppointments();
 
-        // SELECT * FROM CalendarS
-        // LEFT OUTER JOIN USERS
-        // ON CalendarS.KEY_Calendar_USER_ID_FK = USERS.KEY_USER_ID
-        String Appointment_SELECT_QUERY =
-                String.format("SELECT * FROM %s",
-                        Constants.TABLE_APPOINTMENT);
-
-
-        // "getReadableDatabase()" and "getWriteableDatabase()" return the same object (except under low
-        // disk space scenarios)
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery(Appointment_SELECT_QUERY, null);
-        try {
-            if (cursor.moveToFirst()) {
-                do {
-                    CalendarEntry newCalendarEntry = getCalendarEntry(cursor.getInt(cursor.getColumnIndex(Constants.KEY_APPOINTMENT_CALENDARENTRY_ID_FK)));
-                    TrafficData newTrafficData = getTrafficData(cursor.getInt(cursor.getColumnIndex(Constants.KEY_APPOINTMENT_TRAFFICDATA_ID_FK)));
-                    Appointment newAppointment = new Appointment(cursor.getInt(cursor.getColumnIndex(Constants.KEY_APPOINTMENT_DISABLED)), cursor.getInt(cursor.getColumnIndex(Constants.KEY_APPOINTMENT_REFRESH_TIME)), newCalendarEntry, newTrafficData);
-                    appointments.add(newAppointment);
-                } while (cursor.moveToNext());
-            }
-        } catch (Exception e) {
-            Log.d(Constants.TAG, "Error while trying to get Appointments from database");
-        } finally {
-            if (cursor != null && !cursor.isClosed()) {
-                cursor.close();
-            }
-        }
-        return appointments;
+        return (List<Appointment>) readBehavior.readAll(getReadableDatabase());
     }
 
     private TrafficData getTrafficData(int newTrafficDataID) {
-        TrafficData newTrafficData = null;
-        String trafficData_SELECT_QUERY =
-                String.format("SELECT * FROM %s WHERE %s = %d",
-                        Constants.TABLE_TRAFFICDATA, Constants.KEY_TRAFFICDATA_ID, newTrafficDataID);
+        ReadBehavior readBehavior = new ReadCalendarEntry();
 
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery(trafficData_SELECT_QUERY, null);
-        try {
-            if (cursor.moveToFirst()) {
-                newTrafficData = new TrafficData(cursor.getInt(cursor.getColumnIndex(Constants.KEY_TRAFFICDATA_TRAVELTIME)), cursor.getString(cursor.getColumnIndex(Constants.KEY_TRAFFICDATA_TRAFFIC_DENSITY)));
-            }
-        } catch (Exception e) {
-            Log.d(Constants.TAG, "Error while trying to get TrafficData from database");
-        } finally {
-            if (cursor != null && !cursor.isClosed()) {
-                cursor.close();
-            }
-        }
-        return newTrafficData;
+        return (TrafficData) readBehavior.read(newTrafficDataID, getReadableDatabase());
     }
 
     private CalendarEntry getCalendarEntry(int calendarEntryID) {
-        CalendarEntry newCalendarEntry = null;
-        String calendarEntry_SELECT_QUERY =
-                String.format("SELECT * FROM %s WHERE %s = %d",
-                        Constants.TABLE_CALENDARENTRY, Constants.KEY_CALENDARENTRY_ID, calendarEntryID);
+        ReadBehavior readBehavior = new ReadCalendarEntry();
 
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery(calendarEntry_SELECT_QUERY, null);
-        try {
-            if (cursor.moveToFirst()) {
-                Calendar newCalendar = getCalendar(cursor.getInt(cursor.getColumnIndex(Constants.KEY_CALENDARENTRY_CALENDAR_ID_FK)));
-                newCalendarEntry = new CalendarEntry(cursor.getString(cursor.getColumnIndex(Constants.KEY_CALENDARENTRY_NAME)), cursor.getString(cursor.getColumnIndex(Constants.KEY_CALENDARENTRY_DESCRIPTION)), cursor.getInt(cursor.getColumnIndex(Constants.KEY_CALENDARENTRY_TIME)), cursor.getString(cursor.getColumnIndex(Constants.KEY_CALENDARENTRY_PLACE)), newCalendar);
-            }
-        } catch (Exception e) {
-            Log.d(Constants.TAG, "Error while trying to get CalendarEntry from database");
-        } finally {
-            if (cursor != null && !cursor.isClosed()) {
-                cursor.close();
-            }
-        }
-        return newCalendarEntry;
+        return (CalendarEntry) readBehavior.read(calendarEntryID, getReadableDatabase());
     }
 
     private Calendar getCalendar(int calendarID) {
         ReadBehavior readBehavior = new ReadCalendar();
 
-        return (Calendar) readBehavior.read(calendarID,getReadableDatabase());
+        return (Calendar) readBehavior.read(calendarID, getReadableDatabase());
     }
 }
