@@ -1,7 +1,6 @@
 package com.wakemeintime.dffc.wakemeintime
 
-import com.wakemeintime.dffc.wakemeintime.database.Calendar
-import com.wakemeintime.dffc.wakemeintime.database.TrafficData
+import com.wakemeintime.dffc.wakemeintime.database.dataObjects.Calendar
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -14,17 +13,17 @@ import org.junit.Assert.*
 class CalendarUnitTest {
     @Test
     fun isActive_isCorrect0() {
-        val cal = Calendar("","","");
+        val cal = Calendar("", "", "");
         assertFalse(cal.IsisActiveValidBoolean())
     }
     @Test
     fun isActive_isCorrect1() {
-        val cal = Calendar("","","false");
+        val cal = Calendar("", "", "false");
         assertTrue(cal.IsisActiveValidBoolean())
     }
     @Test
     fun isActive_isCorrect2() {
-        val cal = Calendar("","","fals");
+        val cal = Calendar("", "", "fals");
         assertTrue(cal.IsisActiveValidBoolean())
     }
 }

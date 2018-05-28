@@ -1,8 +1,7 @@
 package com.wakemeintime.dffc.wakemeintime
 
-import android.net.TrafficStats
 import org.junit.Test
-import com.wakemeintime.dffc.wakemeintime.database.TrafficData
+import com.wakemeintime.dffc.wakemeintime.database.dataObjects.TrafficData
 import org.junit.Assert.*
 
 /**
@@ -13,12 +12,12 @@ import org.junit.Assert.*
 class TrafficDataUnitTest {
     @Test
     fun travelTimeHours_isCorrect0() {
-        val tdata = TrafficData(500,"mittel");
+        val tdata = TrafficData(500, "mittel");
         assertEquals(500/60, tdata.getTravelTimeHours())
     }
     @Test
     fun travelTimeHours_isCorrect1() {
-        val tdata = TrafficData(500,"mittel");
+        val tdata = TrafficData(500, "mittel");
         assertEquals(500, tdata.getTravelTimeHours())
     }
 }

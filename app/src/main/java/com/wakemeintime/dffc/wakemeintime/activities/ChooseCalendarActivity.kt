@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.ListView
 import com.wakemeintime.dffc.wakemeintime.R
-import com.wakemeintime.dffc.wakemeintime.database.Calendar
+import com.wakemeintime.dffc.wakemeintime.database.dataObjects.Calendar
 import com.wakemeintime.dffc.wakemeintime.database.DatabaseHelper
 import kotlinx.android.synthetic.main.activity_choose_calendar.*
 import java.util.*

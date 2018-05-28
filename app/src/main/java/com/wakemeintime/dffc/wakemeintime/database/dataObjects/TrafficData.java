@@ -1,4 +1,4 @@
-package com.wakemeintime.dffc.wakemeintime.database;
+package com.wakemeintime.dffc.wakemeintime.database.dataObjects;
 
 public class TrafficData {
     public int travelTime;

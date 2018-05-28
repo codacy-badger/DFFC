@@ -7,6 +7,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.wakemeintime.dffc.wakemeintime.database.dataObjects.Appointment;
+import com.wakemeintime.dffc.wakemeintime.database.dataObjects.Calendar;
+import com.wakemeintime.dffc.wakemeintime.database.dataObjects.CalendarEntry;
+import com.wakemeintime.dffc.wakemeintime.database.dataObjects.TrafficData;
+
 import java.util.ArrayList;
 import java.util.List;
 

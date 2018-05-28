@@ -1,4 +1,4 @@
-package com.wakemeintime.dffc.wakemeintime.database;
+package com.wakemeintime.dffc.wakemeintime.database.dataObjects;
 
 public class CalendarEntry {
     public String name;

@@ -1,4 +1,4 @@
-package com.wakemeintime.dffc.wakemeintime.database;
+package com.wakemeintime.dffc.wakemeintime.database.dataObjects;
 
 /**
  * Created by Florian Christof on 28.11.2017.

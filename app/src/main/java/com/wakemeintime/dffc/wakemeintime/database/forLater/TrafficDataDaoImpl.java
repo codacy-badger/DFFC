@@ -1,6 +1,6 @@
-package com.wakemeintime.dffc.wakemeintime.database;
+package com.wakemeintime.dffc.wakemeintime.database.forLater;
 
-import android.content.Context;
+import com.wakemeintime.dffc.wakemeintime.database.dataObjects.TrafficData;
 
 public class TrafficDataDaoImpl implements TrafficDataDao {
 
