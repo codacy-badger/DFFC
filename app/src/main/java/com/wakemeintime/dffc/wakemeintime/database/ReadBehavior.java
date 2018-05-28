@@ -1,6 +1,8 @@
 package com.wakemeintime.dffc.wakemeintime.database;
 
-public interface ReadBehavior {
+import android.database.sqlite.SQLiteDatabase;
 
-    long read();
+public interface ReadBehavior<T> {
+
+    T read(int id, SQLiteDatabase db);
 }

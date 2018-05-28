@@ -134,6 +134,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Unfortunately, there is a bug with the insertOnConflict method
     // (https://code.google.com/p/android/issues/detail?id=13045) so we need to fall back to the more
     // verbose option of querying for the user's primary key if we did an update.
+
+
+
     public long addOrUpdateCalendar(Calendar calendar) {
 
         ContentValues values = new ContentValues();
@@ -148,20 +151,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String[] whereArgs = new String[]{calendar.name};
 
-        return addOrUpdate(Constants.TABLE_CALENDAR,values,whereClause, whereArgs, usersSelectQuery);
-   }
+        return addOrUpdate(Constants.TABLE_CALENDAR, values, whereClause, whereArgs, usersSelectQuery);
+    }
 
-    private long addOrUpdate(String tableName, ContentValues values, String whereClause,String[] whereArgs, String usersSelectQuery ){
+    private long addOrUpdate(String tableName, ContentValues values, String whereClause, String[] whereArgs, String usersSelectQuery) {
         long tableID = -1;
 
-        try(SQLiteDatabase db = getWritableDatabase()) {
+        try (SQLiteDatabase db = getWritableDatabase()) {
             db.beginTransaction();
 
             int rowsAffectedByUpdate = db.update(tableName, values, whereClause, whereArgs);
 
             if (rowsAffectedByUpdate == 1) {
 
-                try(Cursor cursor = db.rawQuery(usersSelectQuery, null)) {
+                try (Cursor cursor = db.rawQuery(usersSelectQuery, null)) {
                     if (cursor.moveToFirst()) {
                         tableID = cursor.getInt(0);
                         db.setTransactionSuccessful();
@@ -169,15 +172,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 }
             } else
                 tableID = db.insertOrThrow(tableName, null, values);
-                db.setTransactionSuccessful();
-            }
-        catch (Exception e) {
+            db.setTransactionSuccessful();
+        } catch (Exception e) {
             Log.d(Constants.TAG, "Error while trying to add or update table");
         }
         return tableID;
     }
-
-
 
 
     public long addOrUpdateTrafficData(TrafficData trafficData) {
@@ -193,7 +193,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String[] whereArgs = new String[]{String.valueOf(trafficData.travelTime)};
 
-        return addOrUpdate(Constants.TABLE_CALENDAR,values,whereClause, whereArgs, usersSelectQuery);
+        return addOrUpdate(Constants.TABLE_CALENDAR, values, whereClause, whereArgs, usersSelectQuery);
     }
 
     public long addOrUpdateCalendarEntry(CalendarEntry calendarEntry) {
@@ -212,7 +212,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String[] whereArgs = new String[]{calendarEntry.name};
 
-        return addOrUpdate(Constants.TABLE_CALENDAR,values,whereClause, whereArgs, usersSelectQuery);
+        return addOrUpdate(Constants.TABLE_CALENDAR, values, whereClause, whereArgs, usersSelectQuery);
     }
 
     public long addOrUpdateAppointment(Appointment appointment) {
@@ -229,9 +229,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String whereClause = Constants.KEY_APPOINTMENT_CALENDARENTRY_ID_FK + "= ?";
 
-        String[] whereArgs =  new String[]{String.valueOf(calendarEntryID)};
+        String[] whereArgs = new String[]{String.valueOf(calendarEntryID)};
 
-        return addOrUpdate(Constants.TABLE_CALENDAR,values,whereClause, whereArgs, usersSelectQuery);
+        return addOrUpdate(Constants.TABLE_CALENDAR, values, whereClause, whereArgs, usersSelectQuery);
     }
 
     public void deleteAllCalendar() {
@@ -261,7 +261,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // "getReadableDatabase()" and "getWriteableDatabase()" return the same object (except under low
         // disk space scenarios)
 
-        try(Cursor cursor = getReadableDatabase().rawQuery(CALENDAR_SELECT_QUERY, null)) {
+        try (Cursor cursor = getReadableDatabase().rawQuery(CALENDAR_SELECT_QUERY, null)) {
             if (cursor.moveToFirst()) {
                 do {
                     Calendar newCalendar = new Calendar(cursor.getString(cursor.getColumnIndex(Constants.KEY_CALENDAR_NAME)), cursor.getString(cursor.getColumnIndex(Constants.KEY_CALENDAR_DESCRIPTION)), cursor.getString(cursor.getColumnIndex(Constants.KEY_CALENDAR_IS_ACTIVE)));
@@ -334,7 +334,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         CalendarEntry newCalendarEntry = null;
         String calendarEntry_SELECT_QUERY =
                 String.format("SELECT * FROM %s WHERE %s = %d",
-                        Constants.TABLE_CALENDARENTRY,Constants.KEY_CALENDARENTRY_ID, calendarEntryID);
+                        Constants.TABLE_CALENDARENTRY, Constants.KEY_CALENDARENTRY_ID, calendarEntryID);
 
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery(calendarEntry_SELECT_QUERY, null);
@@ -354,26 +354,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     private Calendar getCalendar(int calendarID) {
-        Calendar newCalendar =null;
-        String calendar_SELECT_QUERY =
-                String.format("SELECT * FROM %s WHERE %s = %d",
-                        Constants.TABLE_CALENDAR, Constants.KEY_CALENDAR_ID, calendarID);
+        ReadBehavior readBehavior = new ReadCalendar();
 
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery(calendar_SELECT_QUERY, null);
-        try {
-            if (cursor.moveToFirst()) {
-                newCalendar = new Calendar(cursor.getString(cursor.getColumnIndex(Constants.KEY_CALENDAR_NAME)), cursor.getString(cursor.getColumnIndex(Constants.KEY_CALENDAR_DESCRIPTION)), cursor.getString(cursor.getColumnIndex(Constants.KEY_CALENDAR_IS_ACTIVE)));
-            }
-        } catch (Exception e) {
-            Log.d(Constants.TAG, "Error while trying to get Calendar from database");
-        } finally {
-            if (cursor != null && !cursor.isClosed()) {
-                cursor.close();
-            }
-        }
-        return newCalendar;
+        return (Calendar) readBehavior.read(calendarID,getReadableDatabase());
     }
-
-
 }
