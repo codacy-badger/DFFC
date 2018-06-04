@@ -4,10 +4,10 @@ Revision History
 
 | **Date**      | **Version** | **Description** | **Author** |
 | ------------- | ----------- | --------------- | ---------- |
-| \<16/005/18\> | \<1.0\>     | \<Initial\>     |\<Florian   |
-|               |             |                 | Christof;  |
-|               |             |                 | Denny      |
-|               |             |                 | Flämig/>   |
+| \<16/005/18\> | \<1.0\>     | \<Initial\>     | \<Florian Christof; Denny Flämig\>   |
+|               |             |                 |            |
+|               |             |                 |            |
+|               |             |                 |            |
 
 Table of Contents
 
